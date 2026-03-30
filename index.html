@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>てっちゃんカフェ Instagram完全ガイド｜参考アカウント一覧 &amp; 投稿テンプレート</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --primary: #8B4513;
+    --primary-light: #A0522D;
+    --primary-bg: #FFF8DC;
+    --dark: #1a1a1a;
+    --gray-900: #262626;
+    --gray-700: #595959;
+    --gray-500: #8c8c8c;
+    --gray-300: #d9d9d9;
+    --gray-100: #f5f5f5;
+    --white: #ffffff;
+    --green: #389e0d;
+    --green-bg: #f6ffed;
+    --blue: #096dd9;
+    --blue-bg: #e6f7ff;
+    --gold: #d48806;
+    --gold-bg: #fffbe6;
+    --purple: #722ed1;
+    --purple-bg: #f9f0ff;
+    --red: #cf1322;
+    --red-bg: #fff1f0;
+    --pink: #eb2f96;
+    --pink-light: #f759ab;
+    --pink-bg: #fff0f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #fafafa;
+    color: var(--dark);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #4A2C2A 0%, #6F4E37 50%, #8B4513 100%);
+    color: var(--white);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .part-divider {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 32px 40px;
+    text-align: center;
+    margin: 60px 0 40px;
+    border-radius: 16px;
+  }
+  .part-divider h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .part-divider p {
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 6px solid var(--primary);
+  }
+  .section-lead {
+    font-size: 15px;
+    color: var(--gray-700);
+    margin-bottom: 32px;
+    padding-left: 22px;
+  }
+
+  /* ── Account Card ── */
+  .accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .account-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 2px solid var(--gray-300);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .account-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-color: var(--primary);
+  }
+
+  .account-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .account-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .account-info h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: var(--dark);
+  }
+  .account-handle {
+    font-size: 14px;
+    color: var(--blue);
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+  }
+
+  .account-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .meta-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-scale { background: var(--gold-bg); color: var(--gold); }
+  .badge-type { background: var(--blue-bg); color: var(--blue); }
+  .badge-location { background: var(--purple-bg); color: var(--purple); }
+
+  .account-desc {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .account-link {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .account-link:hover {
+    background: var(--primary-light);
+    transform: scale(1.02);
+  }
+
+  .learning-point {
+    background: var(--green-bg);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+  .learning-point strong {
+    display: block;
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .learning-point p {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* ── Category Headers ── */
+  .category-header {
+    background: var(--primary-bg);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  .category-header h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .category-header p {
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+
+  /* ── Highlight ── */
+  .highlight {
+    background: var(--blue-bg);
+    border-left: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .highlight strong {
+    display: block;
+    font-size: 16px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .highlight p {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+  }
+
+  /* ── Template Grid ── */
+  .template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .template-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 2px solid var(--gray-300);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .template-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .template-header {
+    padding: 24px;
+    color: var(--white);
+    position: relative;
+  }
+  .template-type1 { background: linear-gradient(135deg, #096dd9 0%, #1890ff 100%); }
+  .template-type2 { background: linear-gradient(135deg, #389e0d 0%, #52c41a 100%); }
+  .template-type3 { background: linear-gradient(135deg, #d48806 0%, #faad14 100%); }
+  .template-type4 { background: linear-gradient(135deg, #722ed1 0%, #9254de 100%); }
+  .template-type5 { background: linear-gradient(135deg, #cf1322 0%, #f5222d 100%); }
+  .template-type6 { background: linear-gradient(135deg, #eb2f96 0%, #f759ab 100%); }
+
+  .template-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    backdrop-filter: blur(4px);
+  }
+  .template-emoji {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .template-name {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .template-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+  .template-body {
+    padding: 24px;
+  }
+  .template-section {
+    margin-bottom: 20px;
+  }
+  .template-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .template-section p, .template-section ul {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+  }
+  .template-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .template-section li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .template-section li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+  .template-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .tag-frequency { background: var(--blue-bg); color: var(--blue); }
+  .tag-goal { background: var(--green-bg); color: var(--green); }
+  .tag-format { background: var(--gold-bg); color: var(--gold); }
+
+  /* ── Template Box (blue background for templates) ── */
+  .template-box {
+    background: var(--blue-bg);
+    border-left: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .template-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .template-box pre {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* ── Strategy Box ── */
+  .strategy-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 32px;
+  }
+  .strategy-box h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+
+  /* ── Reference Box ── */
+  .reference-box {
+    background: var(--gold-bg);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .reference-box strong {
+    font-size: 13px;
+    color: var(--gold);
+  }
+  .reference-box a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .reference-box a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Shooting Tips ── */
+  .tips-box {
+    background: var(--purple-bg);
+    border-left: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .tips-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 8px;
+  }
+  .tips-box ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.8;
+  }
+
+  /* ── Pattern Detail Card ── */
+  .pattern-detail {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    border: 2px solid var(--gray-300);
+  }
+  .pattern-detail.pink-accent {
+    border-color: var(--pink);
+  }
+  .pattern-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gray-100);
+  }
+  .pattern-detail-header .pattern-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .pattern-detail-header h3 {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--dark);
+  }
+  .pattern-detail-header .pattern-freq {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .example-item {
+    background: var(--gray-100);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .example-item strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .example-item p {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 24px; }
+    .accounts-grid { grid-template-columns: 1fr; }
+    .template-grid { grid-template-columns: 1fr; }
+    .example-grid { grid-template-columns: 1fr; }
+    .part-divider h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>てっちゃんカフェ Instagram完全ガイド</h1>
+  <p>参考アカウント一覧 &amp; 投稿テンプレート</p>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- PART 1: 参考アカウント一覧                                     -->
+<!-- ============================================================ -->
+
+<div class="part-divider">
+  <h2>Part 1: 参考アカウント一覧</h2>
+  <p>今すぐフォローして、成功パターンを学ぼう</p>
+</div>
+
+<div class="highlight">
+  <strong>このリストの使い方</strong>
+  <p>
+    下記のアカウントは、すべて実際にInstagramで成功しているカフェ・飲食店です。<br>
+    <b>Step 1:</b> 気になるアカウントをフォロー<br>
+    <b>Step 2:</b> 投稿内容、写真の撮り方、キャプションの書き方を研究<br>
+    <b>Step 3:</b> 自分のカフェに活かせる要素を抽出して実践
+  </p>
+</div>
+
+<!-- ====== 個人経営カフェ ====== -->
+<section class="section">
+  <h2 class="section-title">個人経営カフェ（最も参考になる）</h2>
+  <p class="section-lead">小規模でも成功している事例。てっちゃんのカフェに最も近い規模感。</p>
+
+  <div class="category-header">
+    <h3>古民家・リノベ系カフェ</h3>
+    <p>建設・改装過程を発信して成功したパターン</p>
+  </div>
+
+  <div class="accounts-grid">
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🏡</div>
+        <div class="account-info">
+          <h3>スズノイエ</h3>
+          <div class="account-handle">@cafe.suzunoie</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">個人経営</span>
+        <span class="meta-badge badge-type">古民家カフェ</span>
+        <span class="meta-badge badge-location">滋賀・高島</span>
+      </div>
+      <p class="account-desc">
+        セルフリノベーション過程をほぼ毎日発信し、開業前からファンを獲得。「友達の家に遊びに行く」感覚で人気。
+      </p>
+      <a href="https://www.instagram.com/cafe.suzunoie/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>建設過程の毎日投稿で開業前集客。工事の様子まで発信してストーリーを共有。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">☕</div>
+        <div class="account-info">
+          <h3>HASU COFFEE</h3>
+          <div class="account-handle">@hasucoffee</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">個人経営</span>
+        <span class="meta-badge badge-type">古民家カフェ</span>
+        <span class="meta-badge badge-location">東京・用賀</span>
+      </div>
+      <p class="account-desc">
+        2024年4月オープンの自家焙煎カフェ。古民家をリノベーションし、地域密着で支持を集める。
+      </p>
+      <a href="https://www.instagram.com/hasucoffee/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>古民家の雰囲気×自家焙煎のこだわりをビジュアルで表現。ローカルな支持を獲得。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="category-header" style="margin-top:40px;">
+    <h3>地域密着・食材こだわり系</h3>
+    <p>地元食材のストーリーで差別化</p>
+  </div>
+
+  <div class="accounts-grid">
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🌾</div>
+        <div class="account-info">
+          <h3>メゾン・ド・イリゼ</h3>
+          <div class="account-handle">@maison_de_iriser</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">個人経営</span>
+        <span class="meta-badge badge-type">地元野菜</span>
+        <span class="meta-badge badge-location">大阪・堺</span>
+      </div>
+      <p class="account-desc">
+        地元産の新鮮野菜を使ったランチ・スイーツ。Instagramコンサル後「インスタ見て来た」が増加。
+      </p>
+      <a href="https://www.instagram.com/maison_de_iriser/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>写真の見せ方改善、ハイライト整理で集客アップ。地元食材のストーリー発信。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🥬</div>
+        <div class="account-info">
+          <h3>WE ARE THE FARM</h3>
+          <div class="account-handle">@official.wearethefarm</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">約1.8万人</span>
+        <span class="meta-badge badge-type">自家農園</span>
+        <span class="meta-badge badge-location">東京6店舗</span>
+      </div>
+      <p class="account-desc">
+        自社農園で無農薬・無化学肥料栽培。「畑→収穫→店舗→調理→お皿」の全過程を可視化。
+      </p>
+      <a href="https://www.instagram.com/official.wearethefarm/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>食材の全過程をビジュアル化。無農薬食材のストーリーテリングの最高峰。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="category-header" style="margin-top:40px;">
+    <h3>自家焙煎・スペシャルティコーヒー系</h3>
+    <p>こだわりを前面に出して成功</p>
+  </div>
+
+  <div class="accounts-grid">
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">☕</div>
+        <div class="account-info">
+          <h3>NO COFFEE</h3>
+          <div class="account-handle">@nocoffee_</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">複数店舗</span>
+        <span class="meta-badge badge-type">ブランド化</span>
+        <span class="meta-badge badge-location">福岡・平尾</span>
+      </div>
+      <p class="account-desc">
+        「Life with good coffee」のコンセプト。個人経営から複数店舗展開、グッズ販売も。
+      </p>
+      <a href="https://www.instagram.com/nocoffee_/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>明確なコンセプトでブランド化。コラボ企画、グッズ展開で収益多角化。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🔥</div>
+        <div class="account-info">
+          <h3>猿田彦珈琲</h3>
+          <div class="account-handle">@sarutahikocoffee</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">24店舗</span>
+        <span class="meta-badge badge-type">スペシャルティ</span>
+        <span class="meta-badge badge-location">東京発</span>
+      </div>
+      <p class="account-desc">
+        「たった一杯で幸せになれるコーヒー屋」。ダイレクトトレード豆のストーリー発信で成長。
+      </p>
+      <a href="https://www.instagram.com/sarutahikocoffee/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>コーヒー豆の産地・生産者紹介。バリスタの顔が見えるコンテンツで親近感。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">☕</div>
+        <div class="account-info">
+          <h3>キミノコーヒー</h3>
+          <div class="account-handle">@kimino_coffee</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">個人経営</span>
+        <span class="meta-badge badge-type">自家焙煎</span>
+        <span class="meta-badge badge-location">東京・三鷹</span>
+      </div>
+      <p class="account-desc">
+        2026年2月オープン。元音楽業界出身の店主が焙煎にこだわり、手作り感のあるコンテンツ。
+      </p>
+      <a href="https://www.instagram.com/kimino_coffee/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>新規オープンの発信方法。店主の個性とこだわりを前面に出す。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🌲</div>
+        <div class="account-info">
+          <h3>Miik COFFEE ROASTERY</h3>
+          <div class="account-handle">@miik_coffee</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">個人経営</span>
+        <span class="meta-badge badge-type">自家焙煎</span>
+        <span class="meta-badge badge-location">檜原村</span>
+      </div>
+      <p class="account-desc">
+        自然豊かな檜原村の自家焙煎スペシャルティコーヒー。カフェ巡り愛好家から注目。
+      </p>
+      <a href="https://www.instagram.com/miik_coffee/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>地方立地でも「行く価値がある店」として発信。自然×コーヒーの世界観。</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====== 中堅・チェーン店（参考） ====== -->
+<section class="section">
+  <h2 class="section-title">中堅・チェーン店（投稿クオリティの参考に）</h2>
+  <p class="section-lead">規模は大きいが、投稿の質・世界観作りが参考になる。</p>
+
+  <div class="accounts-grid">
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">☕</div>
+        <div class="account-info">
+          <h3>Blue Bottle Coffee</h3>
+          <div class="account-handle">@bluebottlejapan</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">全国展開</span>
+        <span class="meta-badge badge-type">高級路線</span>
+      </div>
+      <p class="account-desc">
+        ミニマルで洗練されたビジュアル戦略。ブランドイメージの一貫性が秀逸。
+      </p>
+      <a href="https://www.instagram.com/bluebottlejapan/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>色調・構図の統一感。「丁寧な暮らし」というライフスタイル提案。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🍰</div>
+        <div class="account-info">
+          <h3>コメダ珈琲</h3>
+          <div class="account-handle">@komeda_coffee_official</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">約24万人</span>
+        <span class="meta-badge badge-type">全国900店舗</span>
+      </div>
+      <p class="account-desc">
+        月5件程度の投稿でも高エンゲージメント。背景にこだわった良質な写真のみ投稿。
+      </p>
+      <a href="https://www.instagram.com/komeda_coffee_official/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>量より質の投稿戦略。季節限定メニューの魅力的な撮影技術。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🇳🇴</div>
+        <div class="account-info">
+          <h3>Fuglen Tokyo</h3>
+          <div class="account-handle">@fuglencoffee_tokyo</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">複数店舗</span>
+        <span class="meta-badge badge-type">カフェ&バー</span>
+        <span class="meta-badge badge-location">ノルウェー発</span>
+      </div>
+      <p class="account-desc">
+        食べログ「百名店」選出。北欧デザインの世界観をビジュアルで表現。
+      </p>
+      <a href="https://www.instagram.com/fuglencoffee_tokyo/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>独自の世界観確立。インテリア×商品の組み合わせで「映え」創出。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🥐</div>
+        <div class="account-info">
+          <h3>丘の上のパン屋</h3>
+          <div class="account-handle">@okanouenopanya</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">約5.4万人</span>
+        <span class="meta-badge badge-type">個人経営</span>
+        <span class="meta-badge badge-location">横浜</span>
+      </div>
+      <p class="account-desc">
+        約5,000投稿の継続力。国産小麦・天然酵母・無農薬野菜。毎日コツコツ投稿。
+      </p>
+      <a href="https://www.instagram.com/okanouenopanya/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>個人店の毎日投稿で5万フォロワー達成。継続こそが最大の武器。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🍴</div>
+        <div class="account-info">
+          <h3>KABEAT</h3>
+          <div class="account-handle">@kabeat_official</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-scale">約3,900人</span>
+        <span class="meta-badge badge-type">生産者食堂</span>
+        <span class="meta-badge badge-location">東京・日本橋</span>
+      </div>
+      <p class="account-desc">
+        ハイライト「お客様の声」に良い口コミをまとめて新規来店者の信頼獲得。
+      </p>
+      <a href="https://www.instagram.com/kabeat_official/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>口コミハイライト活用が秀逸。生産者ストーリーを料理と結びつける。</p>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-header">
+        <div class="account-icon">🥞</div>
+        <div class="account-info">
+          <h3>カフェ アクイーユ恵比寿</h3>
+          <div class="account-handle">@accueil_ebisu_official</div>
+        </div>
+      </div>
+      <div class="account-meta">
+        <span class="meta-badge badge-type">パンケーキ</span>
+        <span class="meta-badge badge-location">東京・恵比寿</span>
+      </div>
+      <p class="account-desc">
+        季節限定パンケーキ、アフタヌーンティーなど女性に人気。緑のテラス席が魅力。
+      </p>
+      <a href="https://www.instagram.com/accueil_ebisu_official/" class="account-link" target="_blank">
+        Instagramを見る →
+      </a>
+      <div class="learning-point">
+        <strong>学べるポイント</strong>
+        <p>季節限定メニューの発信。女性客をターゲットにした世界観作り。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ============================================================ -->
+<!-- PART 2: 6つの投稿パターン＆テンプレート                        -->
+<!-- ============================================================ -->
+
+<div class="part-divider">
+  <h2>Part 2: 6つの投稿パターン＆テンプレート</h2>
+  <p>カフェオープン後の日常運用で使える投稿パターンと具体的なテンプレート</p>
+</div>
+
+<!-- ====== パターン1: 今日のおすすめ型 ====== -->
+<div class="pattern-detail">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #096dd9, #1890ff);">1</div>
+    <div>
+      <h3>今日のおすすめ型</h3>
+      <div class="pattern-freq">毎日 ストーリーズ + 週3回 フィード</div>
+    </div>
+  </div>
+
+  <div class="reference-box">
+    <strong>参考アカウント:</strong> 丘の上のパン屋 <a href="https://www.instagram.com/okanouenopanya/" target="_blank">@okanouenopanya</a> ー 約5,000投稿の継続力。毎日コツコツ投稿でフォロワー5.4万人。リアルタイム発信の教科書。
+  </div>
+
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    「今日行ったら何が食べられるか」をリアルタイムで伝える。来店動機を毎日作り続ける最も基本的なパターン。
+  </p>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:12px;">投稿タイミング別の例</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>朝投稿（8〜9時）</strong>
+      <p>「おはようございます。今日のコーヒーはエチオピア イルガチェフェ。フルーティーな香りが最高です」<br>→ 出勤前の人が「帰りに寄ろう」と思う</p>
+    </div>
+    <div class="example-item">
+      <strong>昼投稿（11:30〜12時）</strong>
+      <p>「本日のランチプレート完成しました。地元野菜たっぷりのワンプレート、数量限定です」<br>→ ランチ客をリアルタイムで獲得</p>
+    </div>
+    <div class="example-item">
+      <strong>夕方投稿（17〜18時）</strong>
+      <p>「今日も残りわずか。自家製チーズケーキ、あと3個です」<br>→ 帰宅途中の人が立ち寄る動機に</p>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（朝投稿）</h4>
+    <pre>おはようございます☀️
+
+今日のコーヒーは【○○○○】
+
+□□産の豆を丁寧にハンドドリップ。
+△△な香りと□□な後味が特徴です。
+
+モーニングセット（コーヒー＋トースト）
+¥○○○でご用意してます。
+
+今日も○時まで営業してます。
+ふらっとお立ち寄りください。
+
+#香椎カフェ #福岡カフェ #自家焙煎コーヒー #東区カフェ #今日のコーヒー</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（昼投稿）</h4>
+    <pre>本日のランチプレート🍽️
+
+・○○○○（メイン）
+・地元産△△のサラダ
+・自家製□□スープ
+・コーヒーor紅茶付き
+
+¥○,○○○（税込）
+※数量限定・なくなり次第終了
+
+今日も12時〜14時でお待ちしてます！
+
+#香椎ランチ #福岡ランチ #カフェランチ #香椎カフェ #ワンプレートランチ</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（夕方投稿）</h4>
+    <pre>今日のスイーツ、残りわずかです🍰
+
+自家製○○○○、あと△個。
+□□と一緒にいかがですか？
+
+本日○時まで営業中。
+お帰りのついでにどうぞ。
+
+#香椎カフェ #福岡スイーツ #自家製ケーキ #カフェタイム #東区カフェ</pre>
+  </div>
+
+  <div class="learning-point">
+    <strong>成功のコツ</strong>
+    <p>「今日だけ」「残りわずか」のリアルタイム感が鍵。完璧な写真より、臨場感のある写真の方が反応が良い。ストーリーズは気軽に、フィードは少し丁寧に撮影。</p>
+  </div>
+</div>
+
+<!-- ====== パターン2: リール動画型 ====== -->
+<div class="pattern-detail">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #389e0d, #52c41a);">2</div>
+    <div>
+      <h3>リール動画型（シズル感）</h3>
+      <div class="pattern-freq">週2〜3本</div>
+    </div>
+  </div>
+
+  <div class="reference-box">
+    <strong>参考アカウント:</strong>
+    猿田彦珈琲 <a href="https://www.instagram.com/sarutahikocoffee/" target="_blank">@sarutahikocoffee</a> / NO COFFEE <a href="https://www.instagram.com/nocoffee_/" target="_blank">@nocoffee_</a> ー コーヒーのシズル感をリールで表現。世界観の統一が参考。
+  </div>
+
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    フォロワー以外に届く最大の武器がリール。15秒の短い動画で「食べたい」「飲みたい」を刺激する。
+  </p>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:12px;">4つの撮影パターン</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>コーヒー抽出（15秒）</strong>
+      <p>豆を挽く→お湯を注ぐ→ドリップの滴り→カップに注ぐ→湯気のアップ<br>BGM: トレンド音源（ジャズ系が相性良い）</p>
+    </div>
+    <div class="example-item">
+      <strong>ラテアート（15秒）</strong>
+      <p>ミルクを注ぎ始める→アートが描かれる過程→完成→少し引きの画<br>BGM: おしゃれ系トレンド音源</p>
+    </div>
+    <div class="example-item">
+      <strong>スイーツ断面（15秒）</strong>
+      <p>ケーキやサンドイッチの全体像→ナイフで切る→断面のアップ→フォークですくう<br>BGM: ASMR系 or ポップ系</p>
+    </div>
+    <div class="example-item">
+      <strong>調理過程（15秒）</strong>
+      <p>材料の並び→調理のハイライト→盛り付け→完成品の俯瞰→テーブルに置く<br>BGM: テンポの良い音源</p>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <h4>撮影のコツ</h4>
+    <ul>
+      <li>自然光がベスト（午前10時〜午後3時の窓際）</li>
+      <li>手ブレ防止にスマホ三脚を使う（100均でもOK）</li>
+      <li>同じ角度・同じトーンで統一感を出す</li>
+      <li>トレンド音源を使うとリーチが3〜5倍に</li>
+      <li>最初の1秒で目を引くカット（いきなり注ぐ瞬間から始めるなど）</li>
+      <li>投稿時間: 平日12-13時/19-21時、土日10-11時/17-23時</li>
+    </ul>
+  </div>
+
+  <div class="template-box">
+    <h4>リール用キャプションテンプレート</h4>
+    <pre>今日の一杯☕
+
+○○産のスペシャルティコーヒーを
+丁寧にハンドドリップ。
+
+△△な香りが広がる瞬間が
+一番好きな時間です。
+
+一杯¥○○○〜
+テイクアウトもできます。
+
+📍香椎 / ○時〜○時
+
+#福岡カフェ #香椎カフェ #ハンドドリップコーヒー #カフェ巡り #福岡グルメ</pre>
+  </div>
+
+  <div class="learning-point">
+    <strong>成功のコツ</strong>
+    <p>15秒以内に収める。最初の1秒が勝負（スクロールを止めさせる）。音源選びは発見タブの人気リールから探す。週2〜3本を継続することが大事。</p>
+  </div>
+</div>
+
+<!-- ====== パターン3: 人・裏側型 ====== -->
+<div class="pattern-detail">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #d48806, #faad14);">3</div>
+    <div>
+      <h3>人・裏側型</h3>
+      <div class="pattern-freq">週2〜3回</div>
+    </div>
+  </div>
+
+  <div class="reference-box">
+    <strong>参考アカウント:</strong>
+    スズノイエ <a href="https://www.instagram.com/cafe.suzunoie/" target="_blank">@cafe.suzunoie</a> / メゾン・ド・イリゼ <a href="https://www.instagram.com/maison_de_iriser/" target="_blank">@maison_de_iriser</a> ー 店主の人柄と裏側を見せて親近感を醸成。
+  </div>
+
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    「この人に会いたい」「この店の雰囲気が好き」と思わせる投稿。初めての来店ハードルを下げ、リピーターを増やす。
+  </p>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:12px;">投稿例</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>開店準備の様子</strong>
+      <p>朝の仕込み風景、コーヒー豆の焙煎、テーブルセッティング。「今日もお客さんのために準備してます」という日常感。</p>
+    </div>
+    <div class="example-item">
+      <strong>家族の日常</strong>
+      <p>居酒屋を営む家族がカフェも始めるストーリー。お子さんの反応、奥さんとのメニュー試作など、パーソナルな一面。</p>
+    </div>
+    <div class="example-item">
+      <strong>お客様との交流</strong>
+      <p>常連さんとの会話（許可取得済み）、お客さんからのメッセージ紹介。「温かい店だな」と伝わる投稿。</p>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（開店準備）</h4>
+    <pre>おはようございます。
+今日も朝から準備中です。
+
+コーヒー豆を挽いて、
+パンを焼いて、
+お花を飾って。
+
+「今日来てくれる人が
+ いい時間を過ごせますように」
+
+そんな気持ちで毎朝やってます。
+
+○時からオープンです。
+お待ちしてます。
+
+#香椎カフェ #カフェの裏側 #開店準備 #福岡カフェ #日常</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（試食・試作）</h4>
+    <pre>新メニュー、試作中です🔬
+
+○○○○を△△で仕上げてみました。
+□□の食感と、◇◇の風味がポイント。
+
+味見してもらった常連さんの反応は…
+「これ、絶対メニューに入れて！」
+
+近日中にお出しできそうです。
+お楽しみに！
+
+#新メニュー開発 #香椎カフェ #試作中 #福岡カフェ #もうすぐ</pre>
+  </div>
+
+  <div class="learning-point">
+    <strong>成功のコツ</strong>
+    <p>完璧に見せようとしない。「頑張ってる姿」「素の表情」が一番共感を集める。ストーリーズは気軽に、フィードは少し編集して投稿。</p>
+  </div>
+</div>
+
+<!-- ====== パターン4: 口コミ・お客様の声型 ====== -->
+<div class="pattern-detail">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #722ed1, #9254de);">4</div>
+    <div>
+      <h3>口コミ・お客様の声型</h3>
+      <div class="pattern-freq">週1回</div>
+    </div>
+  </div>
+
+  <div class="reference-box">
+    <strong>参考アカウント:</strong>
+    KABEAT <a href="https://www.instagram.com/kabeat_official/" target="_blank">@kabeat_official</a> ー ハイライト「お客様の声」に口コミをまとめ、新規来店者の信頼獲得に成功。
+  </div>
+
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    第三者の声は自分で「美味しい」と言うより何倍も説得力がある。お客様の感想を活用して信頼を構築する。
+  </p>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:12px;">投稿例</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>お客様の投稿をリポスト</strong>
+      <p>お客様がタグ付けしてくれた投稿をストーリーズでリポスト。フィードにまとめ投稿も作る。「嬉しい感想をいただきました」の形式。</p>
+    </div>
+    <div class="example-item">
+      <strong>口コミの紹介投稿</strong>
+      <p>いただいた口コミをスクリーンショットや引用形式でシェア。店側のコメントも添えて感謝を伝える。</p>
+    </div>
+    <div class="example-item">
+      <strong>ハイライトにまとめる</strong>
+      <p>KABEATのように「お客様の声」ハイライトを作成。初めて来る人がプロフィールを見た時に安心材料になる。</p>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（お客様の声紹介）</h4>
+    <pre>嬉しいお声をいただきました🙏
+
+「○○○○○○○○○○」
+
+こんな風に言っていただけると
+本当に励みになります。
+
+一杯一杯、丁寧に淹れてます。
+ぜひ一度お越しください。
+
+#香椎カフェ #お客様の声 #福岡カフェ #カフェ好きな人と繋がりたい #ありがとう</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>キャプションテンプレート（リポスト御礼）</h4>
+    <pre>@○○○○さん、
+ご来店＆投稿ありがとうございます！
+
+素敵な写真で紹介していただいて
+スタッフ一同感激です😊
+
+○○○○、気に入っていただけて嬉しいです。
+またいつでもお待ちしてますね！
+
+#香椎カフェ #福岡カフェ #リポスト #ご来店ありがとうございます</pre>
+  </div>
+
+  <div class="learning-point">
+    <strong>成功のコツ</strong>
+    <p>お客様が投稿しやすい仕掛けを作る（フォトスポット設置、ハッシュタグの案内POPなど）。リポストは必ず許可を取る or ストーリーズのリポスト機能を使う。ハイライトは常に最新の声で更新。</p>
+  </div>
+</div>
+
+<!-- ====== パターン5: 限定・今だけ型 ====== -->
+<div class="pattern-detail">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #cf1322, #f5222d);">5</div>
+    <div>
+      <h3>限定・今だけ型</h3>
+      <div class="pattern-freq">毎日 ストーリーズ</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    「今行かないと損」という緊急性で即日来店を促す。ストーリーズのリアルタイム性を最大限に活用するパターン。
+  </p>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:12px;">投稿例</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>本日限定メニュー</strong>
+      <p>「今日だけ！○○農園の完熟イチゴを使ったパフェ。数量限定5個のみ」<br>→ 限定感で即行動を促す</p>
+    </div>
+    <div class="example-item">
+      <strong>リアルタイム在庫情報</strong>
+      <p>「自家製チーズケーキ、残り2個です」「完売しました、ありがとうございます！」<br>→ 次回は早めに行こうと思わせる</p>
+    </div>
+    <div class="example-item">
+      <strong>季節限定メニュー</strong>
+      <p>「桜の季節だけの特別ラテ。今週いっぱいで終了です」<br>→ 季節の移ろいと一緒に発信</p>
+    </div>
+  </div>
+
+  <div class="template-box">
+    <h4>ストーリーズテンプレート（本日限定）</h4>
+    <pre>【本日限定】
+
+○○○○、今日だけ作りました。
+
+△△産の□□を使った特別メニュー。
+数量限定○個のみ。
+
+早い者勝ちです！
+
+📍香椎 / 本日○時まで</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>ストーリーズテンプレート（在庫状況）</h4>
+    <pre>○○○○の在庫状況🔔
+
+朝10個焼きました。
+→ 現在残り△個です。
+
+お早めにどうぞ！
+
+📍香椎 / ○時まで営業中</pre>
+  </div>
+
+  <div class="template-box">
+    <h4>ストーリーズテンプレート（完売御礼）</h4>
+    <pre>【完売御礼】
+
+本日の○○○○、
+おかげさまで完売しました！🙏
+
+ありがとうございます。
+
+明日も○個ご用意しますので、
+お早めにお越しください！</pre>
+  </div>
+
+  <div class="learning-point">
+    <strong>成功のコツ</strong>
+    <p>「売り切れました」の完売報告も重要な投稿。「人気なんだ」「次は早めに行かなきゃ」という心理を作る。毎日のストーリーズ更新で、フォロワーが「今日は何があるかな」とチェックする習慣を作る。</p>
+  </div>
+</div>
+
+<!-- ====== パターン6: コンセプト世界観型 ★NEW ====== -->
+<div class="pattern-detail pink-accent">
+  <div class="pattern-detail-header">
+    <div class="pattern-num" style="background: linear-gradient(135deg, #eb2f96, #f759ab);">6</div>
+    <div>
+      <h3 style="color: var(--pink);">コンセプト世界観型 <span style="background:var(--pink); color:white; padding:2px 10px; border-radius:4px; font-size:14px; margin-left:8px;">NEW</span></h3>
+      <div class="pattern-freq">月2〜4本（渾身の1本を作り込む）</div>
+    </div>
+  </div>
+
+  <div style="background: var(--pink-bg); border-left: 4px solid var(--pink); border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;">
+    <p style="font-size: 15px; color: var(--gray-700); line-height: 1.8;">
+      <b style="color: var(--pink);">このパターンの目的:</b><br>
+      カフェの世界観を15〜30秒の動画で体験させ、「この空間に行きたい」を一発で作る。<b>フォロー判断を即座に決定させる最重要コンテンツ。</b><br>
+      世界観リールは「保存」「シェア」されやすく、アルゴリズム上最も有利。1本の良い世界観リールが数万リーチし、数百フォロワーを獲得する可能性がある。
+    </p>
+  </div>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--pink); margin-bottom:12px;">4つの構成パターン（15〜30秒）</h4>
+
+  <div class="example-grid">
+    <div class="example-item" style="border-left: 4px solid var(--pink);">
+      <strong style="color: var(--pink);">パターンA: 空間没入型</strong>
+      <p>ドアを開ける → 店内パン → 窓からの光 → コーヒーのアップ → 店主の笑顔<br><br>「お客さんの目線」で店内を体験する構成。最初のドアを開けるシーンで一気に引き込む。</p>
+    </div>
+    <div class="example-item" style="border-left: 4px solid var(--pink);">
+      <strong style="color: var(--pink);">パターンB: 一日の流れ型</strong>
+      <p>朝の準備 → 開店 → お客さんの笑顔 → 夕方の店内 → 「今日もありがとう」<br><br>カフェの1日をダイジェストで見せる。時間の経過で「毎日こんな素敵な場所がある」と感じさせる。</p>
+    </div>
+    <div class="example-item" style="border-left: 4px solid var(--pink);">
+      <strong style="color: var(--pink);">パターンC: 五感刺激型</strong>
+      <p>豆を挽く音 → 湯気 → ラテアート → ケーキの断面 → 一口目の表情<br><br>音・映像・質感で五感を刺激。ASMR的な要素も取り入れて「体験したい」欲求を最大化。</p>
+    </div>
+    <div class="example-item" style="border-left: 4px solid var(--pink);">
+      <strong style="color: var(--pink);">パターンD: ストーリーテリング型</strong>
+      <p>テキストオーバーレイで想いを語りながら、空間の映像を流す<br><br>「なぜこのカフェを作ったのか」「どんな場所にしたいのか」を文字と映像で伝える。共感でフォローに繋げる。</p>
+    </div>
+  </div>
+
+  <h4 style="font-size:15px; font-weight:700; color:var(--pink); margin-top:24px; margin-bottom:12px;">コンセプト別の方向性例（ヒアリング後に確定）</h4>
+
+  <div class="example-grid">
+    <div class="example-item">
+      <strong>和モダン系</strong>
+      <p>障子の光、木の質感、抹茶ラテ、BGMは環境音。「静寂の中の一杯」という世界観。</p>
+    </div>
+    <div class="example-item">
+      <strong>北欧系</strong>
+      <p>白い壁、植物、シンプルな器、BGMはアコースティック。「ヒュッゲ（居心地の良さ）」を体現。</p>
+    </div>
+    <div class="example-item">
+      <strong>レトロ喫茶系</strong>
+      <p>暖色照明、銅のケトル、プリン、BGMはジャズ。「昭和の喫茶店を令和に」のノスタルジー。</p>
+    </div>
+    <div class="example-item">
+      <strong>居酒屋×カフェ融合系</strong>
+      <p>夜の居酒屋 → 朝のカフェの変身、二面性ギャップ。「夜は居酒屋、昼はカフェ。同じ場所の2つの顔」。</p>
+    </div>
+  </div>
+
+  <div class="tips-box" style="border-color: var(--pink);">
+    <h4 style="color: var(--pink);">撮影・編集のコツ</h4>
+    <ul>
+      <li>1カットは2〜3秒以内。テンポよく切り替える</li>
+      <li>手持ちよりスライダーやジンバルで滑らかに（安いものでOK）</li>
+      <li>BGMはトレンド音源 or カフェの雰囲気に合う楽曲を厳選</li>
+      <li>色味・フィルターを全投稿で統一（世界観のブレを防ぐ）</li>
+      <li>テキストオーバーレイは最小限。映像で語らせる</li>
+      <li>最初の1秒で「美しい」と思わせるカット（ドアを開ける、光が差す瞬間など）</li>
+      <li>完成したらプロフィールの固定投稿に設定</li>
+    </ul>
+  </div>
+
+  <div class="template-box" style="border-color: var(--pink);">
+    <h4 style="color: var(--pink);">キャプションテンプレート（世界観リール）</h4>
+    <pre>ここは、○○○○な場所。
+
+△△△△で、
+□□□□な時間を。
+
+一杯のコーヒーと、
+穏やかな空間をご用意して
+お待ちしています。
+
+📍香椎 / ○時〜○時
+プロフィールのリンクから詳細へ
+
+#福岡カフェ #香椎カフェ #カフェ巡り #福岡グルメ #新しいカフェ</pre>
+  </div>
+
+  <div class="template-tags" style="margin-top: 16px;">
+    <span class="tag tag-frequency">月2〜4本（渾身の1本を作り込む）</span>
+    <span class="tag tag-goal">認知爆発・フォロー獲得</span>
+    <span class="tag tag-format">リール（最重要）</span>
+  </div>
+
+  <div class="learning-point" style="margin-top: 16px; border-color: var(--pink); background: var(--pink-bg);">
+    <strong style="color: var(--pink);">なぜこのパターンが最重要なのか</strong>
+    <p>世界観リールは1本で数万リーチ→数百フォロワー獲得の可能性がある。「おすすめ型」や「人・裏側型」がフォロワーとの関係を深めるのに対し、世界観リールは「新しいフォロワーを爆発的に獲得する」役割。全フェーズで常に投入する。月2本でも、渾身の1本を作り込むことが大事。</p>
+  </div>
+</div>
+
+
+<!-- ====== まとめ＆アクションステップ ====== -->
+
+<div class="part-divider" style="background: linear-gradient(135deg, #389e0d 0%, #52c41a 100%);">
+  <h2>まとめ＆アクションステップ</h2>
+  <p>今日からできることを整理</p>
+</div>
+
+<section class="section">
+
+  <div class="strategy-box" style="border: 3px solid var(--green);">
+    <h3 style="color: var(--green);">参考アカウントの活用方法</h3>
+    <div class="example-grid">
+      <div class="example-item">
+        <strong>Step 1: フォローする</strong>
+        <p>上記のアカウントから5〜10個をフォロー。特にスズノイエ、猿田彦珈琲、NO COFFEEは必須。</p>
+      </div>
+      <div class="example-item">
+        <strong>Step 2: 研究する</strong>
+        <p>毎日投稿をチェックして「なぜこの投稿が良いのか」を分析。写真の撮り方、キャプションの書き方、リールの構成を観察。</p>
+      </div>
+      <div class="example-item">
+        <strong>Step 3: 抽出する</strong>
+        <p>自分のカフェに活かせる要素をリストアップ。完全コピーではなく、「成功の理由」を理解して自分の個性と掛け合わせる。</p>
+      </div>
+      <div class="example-item">
+        <strong>Step 4: 実践する</strong>
+        <p>6つのパターンのテンプレートを使って投稿開始。まずはパターン1（今日のおすすめ型）とパターン3（人・裏側型）から。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>6つのパターンの使い分け</h3>
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">パターン</th>
+            <th style="padding:12px; text-align:left;">頻度</th>
+            <th style="padding:12px; text-align:left;">目的</th>
+            <th style="padding:12px; text-align:left;">形式</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:#096dd9;">1. 今日のおすすめ型</td>
+            <td style="padding:12px;">毎日ストーリーズ + 週3フィード</td>
+            <td style="padding:12px;">即日来店</td>
+            <td style="padding:12px;">ストーリーズ / フィード</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:#389e0d;">2. リール動画型</td>
+            <td style="padding:12px;">週2〜3本</td>
+            <td style="padding:12px;">新規リーチ拡大</td>
+            <td style="padding:12px;">リール</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:#d48806;">3. 人・裏側型</td>
+            <td style="padding:12px;">週2〜3回</td>
+            <td style="padding:12px;">信頼構築・親近感</td>
+            <td style="padding:12px;">ストーリーズ / リール</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:#722ed1;">4. 口コミ・お客様の声型</td>
+            <td style="padding:12px;">週1回</td>
+            <td style="padding:12px;">信頼・社会的証明</td>
+            <td style="padding:12px;">ストーリーズ / フィード</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:#cf1322;">5. 限定・今だけ型</td>
+            <td style="padding:12px;">毎日ストーリーズ</td>
+            <td style="padding:12px;">即時売上</td>
+            <td style="padding:12px;">ストーリーズ</td>
+          </tr>
+          <tr style="background: var(--pink-bg);">
+            <td style="padding:12px; font-weight:700; color:var(--pink);">6. コンセプト世界観型 ★</td>
+            <td style="padding:12px;">月2〜4本</td>
+            <td style="padding:12px;">認知爆発・フォロー獲得</td>
+            <td style="padding:12px;">リール（最重要）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="strategy-box" style="border: 3px solid var(--blue);">
+    <h3 style="color: var(--blue);">週間スケジュール例</h3>
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">曜日</th>
+            <th style="padding:12px; text-align:left;">フィード/リール</th>
+            <th style="padding:12px; text-align:left;">ストーリーズ</th>
+            <th style="padding:12px; text-align:left;">目的</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">月</td>
+            <td style="padding:12px;">今日のおすすめ型（フィード）</td>
+            <td style="padding:12px;">本日の空席情報</td>
+            <td style="padding:12px;">週初めの来店促進</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">火</td>
+            <td style="padding:12px;">人・裏側型（リール）</td>
+            <td style="padding:12px;">仕込み風景</td>
+            <td style="padding:12px;">親近感の醸成</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">水</td>
+            <td style="padding:12px;">リール動画型（シズル感）</td>
+            <td style="padding:12px;">今日のおすすめ + 限定情報</td>
+            <td style="padding:12px;">来店動機の創出</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300); background: var(--pink-bg);">
+            <td style="padding:12px; font-weight:700;">木</td>
+            <td style="padding:12px;"><b style="color:var(--pink);">★ コンセプト世界観型（リール）</b></td>
+            <td style="padding:12px;">お客様の声シェア</td>
+            <td style="padding:12px;"><b>フォロー獲得の主力</b></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">金</td>
+            <td style="padding:12px;">今日のおすすめ型（フィード）</td>
+            <td style="padding:12px;">週末の予約状況</td>
+            <td style="padding:12px;">週末集客の準備</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">土</td>
+            <td style="padding:12px;">リール動画型（シズル感）</td>
+            <td style="padding:12px;">本日の限定・在庫情報</td>
+            <td style="padding:12px;">週末売上の最大化</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">日</td>
+            <td style="padding:12px;">今日のおすすめ型 or 口コミ型</td>
+            <td style="padding:12px;">来週の予告</td>
+            <td style="padding:12px;">次週への期待感</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--gray-700);">
+      <strong>ポイント:</strong> ストーリーズは毎日更新し、フィード/リールは週4〜5回。コンセプト世界観リールは月2〜4本（木曜に集中投下）。残りの曜日は他のパターンをローテーション。
+    </p>
+  </div>
+
+  <div class="highlight" style="border-color: var(--primary); background: var(--primary-bg);">
+    <strong style="color: var(--primary);">最も大事なこと</strong>
+    <p>
+      完璧を目指さず、<b>まず投稿を始めること</b>。最初は上手くなくても大丈夫。<br>
+      上記の参考アカウントも、最初の投稿と今の投稿を比べると大きく成長している。<br><br>
+      <b>6つのパターンの優先順位:</b><br>
+      まずは <b>パターン1（今日のおすすめ）</b> と <b>パターン3（人・裏側）</b> から始める。<br>
+      慣れてきたら <b>パターン2（リール）</b> と <b style="color:var(--pink);">パターン6（世界観リール）</b> を追加。<br>
+      お客さんが来始めたら <b>パターン4（口コミ）</b> と <b>パターン5（限定）</b> をフル稼働。<br><br>
+      <b>継続が全て。</b> 毎日1つのストーリーズだけでも、やらないよりはるかに良い。
+    </p>
+  </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+  てっちゃんカフェ Instagram完全ガイド &copy; 2026
+</footer>
+
+</body>
+</html>

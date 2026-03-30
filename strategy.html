@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カフェInstagram投稿テンプレート戦略｜売上最大化設計</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --primary: #8B4513;
+    --primary-light: #A0522D;
+    --primary-bg: #FFF8DC;
+    --dark: #1a1a1a;
+    --gray-900: #262626;
+    --gray-700: #595959;
+    --gray-500: #8c8c8c;
+    --gray-300: #d9d9d9;
+    --gray-100: #f5f5f5;
+    --white: #ffffff;
+    --green: #389e0d;
+    --green-bg: #f6ffed;
+    --blue: #096dd9;
+    --blue-bg: #e6f7ff;
+    --gold: #d48806;
+    --gold-bg: #fffbe6;
+    --purple: #722ed1;
+    --purple-bg: #f9f0ff;
+    --red: #cf1322;
+    --red-bg: #fff1f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #fafafa;
+    color: var(--dark);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #4A2C2A 0%, #6F4E37 50%, #8B4513 100%);
+    color: var(--white);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 6px solid var(--primary);
+  }
+
+  /* ── Goal Flow ── */
+  .goal-flow {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+  }
+  .goal-title {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 32px;
+  }
+  .flow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step::after {
+    content: '→';
+    position: absolute;
+    right: -30px;
+    top: 30px;
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .flow-step:last-child::after {
+    display: none;
+  }
+  .flow-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 12px;
+  }
+  .flow-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+
+  /* ── Template Grid ── */
+  .template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .template-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 2px solid var(--gray-300);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .template-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .template-header {
+    padding: 24px;
+    color: var(--white);
+    position: relative;
+  }
+  .template-type1 { background: linear-gradient(135deg, #096dd9 0%, #1890ff 100%); }
+  .template-type2 { background: linear-gradient(135deg, #389e0d 0%, #52c41a 100%); }
+  .template-type3 { background: linear-gradient(135deg, #d48806 0%, #faad14 100%); }
+  .template-type4 { background: linear-gradient(135deg, #722ed1 0%, #9254de 100%); }
+  .template-type5 { background: linear-gradient(135deg, #cf1322 0%, #f5222d 100%); }
+  .template-type6 { background: linear-gradient(135deg, #eb2f96 0%, #f759ab 100%); }
+
+  .template-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    backdrop-filter: blur(4px);
+  }
+  .template-emoji {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .template-name {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .template-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+  .template-body {
+    padding: 24px;
+  }
+  .template-section {
+    margin-bottom: 20px;
+  }
+  .template-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .template-section p, .template-section ul {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+  }
+  .template-section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .template-section li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .template-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+  .template-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .tag-frequency { background: var(--blue-bg); color: var(--blue); }
+  .tag-goal { background: var(--green-bg); color: var(--green); }
+  .tag-format { background: var(--gold-bg); color: var(--gold); }
+
+  /* ── Strategy Box ── */
+  .strategy-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 32px;
+  }
+  .strategy-box h3 {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .strategy-item {
+    background: var(--gray-100);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .strategy-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .strategy-item p {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* ── CTA ── */
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .cta-box h3 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .cta-box p {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 24px; }
+    .template-grid { grid-template-columns: 1fr; }
+    .flow-steps { flex-direction: column; }
+    .flow-step::after { display: none; }
+    .strategy-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>食酒家拠り所てっちゃん カフェ事業</h1>
+  <p>Instagram戦略レポート｜売上最大化のための完全設計</p>
+</div>
+
+<div class="container">
+
+<!-- ====== 提案概要 ====== -->
+<section class="section">
+  <h2 class="section-title">📋 提案概要</h2>
+
+  <div class="strategy-box" style="border: 3px solid var(--red);">
+    <h3 style="color: var(--red);">このレポートのゴール</h3>
+    <p style="font-size: 16px; font-weight: 700; color: var(--gray-900);">
+      カフェのオープン日にInstagramの告知が数千人に届き、初日から集客できる状態を作る。
+    </p>
+    <p style="font-size: 14px; color: var(--gray-700); margin-top: 8px;">
+      オープンしてからアカウントを作るのでは遅い。開業前からフォロワーを育て、「オープンしました」の投稿と同時にお客さんが来る仕組みを作る。
+    </p>
+  </div>
+
+  <div class="strategy-box">
+    <h3>アカウント戦略: 居酒屋とカフェは分ける</h3>
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <strong>居酒屋アカウント（既存）</strong>
+        <p>
+          今まで通り居酒屋の運用を継続。<br>
+          カフェアカウントへの<b>送客役</b>として活用。<br>
+          プロフやストーリーズで「カフェも準備中」と紹介。
+        </p>
+      </div>
+      <div class="strategy-item">
+        <strong>カフェアカウント（新規）</strong>
+        <p>
+          カフェ専用の世界観で新規作成。<br>
+          開業前から投稿を開始しフォロワーを育成。<br>
+          <b>こちらが集客の主戦場。</b>
+        </p>
+      </div>
+    </div>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--gray-700); background: var(--gold-bg); padding: 16px; border-radius: 8px;">
+      <b>なぜ分けるのか？</b><br>
+      Instagramのアルゴリズムは「何のアカウントか」をAIで判断する。居酒屋とカフェの投稿が混在すると、どちらの検索結果にも表示されにくくなる。写真のトーン・ターゲット層も全く違うため、分けた方がそれぞれの集客効果が高い。
+    </p>
+  </div>
+
+  <div class="strategy-box">
+    <h3>てっちゃんの最大の武器: 居酒屋が「集客装置」になる</h3>
+    <p style="font-size: 14px; color: var(--gray-700); margin-bottom: 16px;">
+      普通の新規カフェはオンラインだけでフォロワーを集めるしかない。<br>
+      てっちゃんは<b>居酒屋という毎日お客さんが来るリアル店舗</b>を持っている。
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">居酒屋→カフェへの送客方法</th><th style="padding:12px;">やり方</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">店内POP・QRコード</td>
+            <td style="padding:12px;">レジ横・テーブルに「カフェのインスタはこちら」を設置</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">スタッフからの声かけ</td>
+            <td style="padding:12px;">「今度カフェも始めます。よかったらフォローお願いします」</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">フォロー特典</td>
+            <td style="padding:12px;">「カフェのインスタフォローで居酒屋のドリンク1杯サービス」など</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">試作品の味見</td>
+            <td style="padding:12px;">居酒屋のお客さんにカフェメニューの試作品を出し、感想を投稿してもらう</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">ストーリーズ送客</td>
+            <td style="padding:12px;">居酒屋アカウントで定期的に「カフェの準備状況」をシェア → カフェアカウントへ誘導</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--green); font-weight: 700; background: var(--green-bg); padding: 12px; border-radius: 8px;">
+      見込み: 1日3〜5人 × 90日 = 270〜450人（オフラインだけで）。オンライン施策と合わせて3,000人を目指す。
+    </p>
+  </div>
+
+</section>
+
+<!-- ====== ゴールから逆算した設計 ====== -->
+<section class="section">
+  <h2 class="section-title">💰 ゴール: 売上を上げる ための導線設計</h2>
+  
+  <div class="goal-flow">
+    <div class="goal-title">Instagram → 売上までの流れ</div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-icon">👀</div>
+        <div class="flow-label">発見される</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">❤️</div>
+        <div class="flow-label">興味を持つ</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">📱</div>
+        <div class="flow-label">フォローする</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">🚶</div>
+        <div class="flow-label">来店する</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">💰</div>
+        <div class="flow-label">売上発生</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">🔄</div>
+        <div class="flow-label">リピート</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>売上を上げるために必要な3つの要素</h3>
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <strong>① 認知の拡大</strong>
+        <p>リール動画で発見タブに表示され、香椎・東区周辺のユーザーに「このカフェができるんだ！」と認知してもらう</p>
+      </div>
+      <div class="strategy-item">
+        <strong>② 来店動機の創出</strong>
+        <p>「行ってみたい」と思わせるコンテンツ。メニューの魅力、店内の雰囲気、限定感、ストーリーで心を動かす</p>
+      </div>
+      <div class="strategy-item">
+        <strong>③ リピートの仕組み</strong>
+        <p>来店後もフォロワーとして繋がり続け、「今日のおすすめ」「限定メニュー」で再来店を促す</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 参考Instagramアカウント ====== -->
+<section class="section">
+  <h2 class="section-title">📱 参考Instagramアカウント</h2>
+
+  <div class="strategy-box">
+    <h3>テンプレートの元になった成功アカウント</h3>
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">アカウント</th>
+            <th style="padding:12px; text-align:left;">参考ポイント</th>
+            <th style="padding:12px; text-align:left;">Instagram</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">スズノイエ</td>
+            <td style="padding:12px;">建設ストーリー型の教科書。リノベ過程を毎日発信→オープン初日満席</td>
+            <td style="padding:12px;"><a href="https://www.instagram.com/cafe.suzunoie/" target="_blank" style="color:var(--blue); font-weight:700;">@cafe.suzunoie</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">猿田彦珈琲</td>
+            <td style="padding:12px;">自家焙煎コーヒーのシズル感リール。ブランド世界観の統一が参考</td>
+            <td style="padding:12px;"><a href="https://www.instagram.com/sarutahikocoffee/" target="_blank" style="color:var(--blue); font-weight:700;">@sarutahikocoffee</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">NO COFFEE</td>
+            <td style="padding:12px;">福岡発カフェ。写真のトーン統一・世界観作りが参考</td>
+            <td style="padding:12px;"><a href="https://www.instagram.com/nocoffee_/" target="_blank" style="color:var(--blue); font-weight:700;">@nocoffee_</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">メゾン・ド・イリゼ</td>
+            <td style="padding:12px;">人・裏側型の参考。スタッフの日常や準備風景で親近感を醸成</td>
+            <td style="padding:12px;"><a href="https://www.instagram.com/maison_de_iriser/" target="_blank" style="color:var(--blue); font-weight:700;">@maison_de_iriser</a></td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">福岡カフェ日記</td>
+            <td style="padding:12px;">福岡最大級のカフェ紹介メディア。ここに取り上げてもらうのが目標</td>
+            <td style="padding:12px;"><a href="https://www.instagram.com/fukuoka___cafe/" target="_blank" style="color:var(--blue); font-weight:700;">@fukuoka___cafe</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--gray-700);">
+      <strong>活用方法:</strong> 各アカウントの投稿を実際に見て、写真のトーン・キャプションの書き方・リールの構成を研究する。特にスズノイエの建設ストーリーと猿田彦珈琲のシズル感リールは必見。
+    </p>
+  </div>
+</section>
+
+<!-- ====== 5つの投稿テンプレート ====== -->
+<section class="section">
+  <h2 class="section-title">📝 6つの投稿テンプレート（売上に直結する設計）</h2>
+  
+  <div class="template-grid">
+    
+    <!-- Template 1 -->
+    <div class="template-card">
+      <div class="template-header template-type1">
+        <div class="template-number">1</div>
+        <div class="template-emoji">🏗️</div>
+        <div class="template-name">建設ストーリー型</div>
+        <div class="template-subtitle">開業までの過程で期待感を醸成</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>オープン前からフォロワーを獲得し、「オープン初日に行きたい！」という待機客を作る</p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容</h4>
+          <ul>
+            <li>工事の進捗状況（Before → After）</li>
+            <li>内装のこだわりポイント解説</li>
+            <li>「なぜこのカフェを作るのか」ストーリー</li>
+            <li>完成予想図とカウントダウン</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>「オープン日は○月○日！先行予約はDMで受付中」と明記。フォロワーを「初日来店客」に変換</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">週1〜2回</span>
+          <span class="tag tag-goal">認知拡大</span>
+          <span class="tag tag-format">フィード/リール</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 2 -->
+    <div class="template-card">
+      <div class="template-header template-type2">
+        <div class="template-number">2</div>
+        <div class="template-emoji">☕</div>
+        <div class="template-name">メニュー魅力型</div>
+        <div class="template-subtitle">食欲を刺激して来店動機を作る</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>「これ食べたい！」「これ飲みたい！」という即座の来店動機を創出</p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容</h4>
+          <ul>
+            <li>看板メニューのシズル感ある写真/動画</li>
+            <li>コーヒーを注ぐ瞬間、ラテアート制作過程</li>
+            <li>スイーツの断面ショット</li>
+            <li>「本日のおすすめ」「限定10食」など希少性</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>「ご予約はプロフィールのリンクから」「本日17時〜空席あります」とリアルタイム情報で即日来店を促す</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">週3回</span>
+          <span class="tag tag-goal">来店動機</span>
+          <span class="tag tag-format">フィード/リール</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 3 -->
+    <div class="template-card">
+      <div class="template-header template-type3">
+        <div class="template-number">3</div>
+        <div class="template-emoji">🌾</div>
+        <div class="template-name">食材ストーリー型</div>
+        <div class="template-subtitle">こだわりを伝えて価値を高める</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>「ただのカフェじゃない」という差別化。食材へのこだわりで価格以上の価値を感じてもらう</p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容</h4>
+          <ul>
+            <li>コーヒー豆の産地・生産者紹介</li>
+            <li>地元農家から仕入れた野菜の紹介</li>
+            <li>「なぜこの食材を選んだか」のストーリー</li>
+            <li>仕入れの様子、市場での買い付け風景</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>こだわりに共感した顧客は単価が高くても来店。「このカフェの価値観に共感する」というファン化で客単価UP</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">週1回</span>
+          <span class="tag tag-goal">ブランド化</span>
+          <span class="tag tag-format">フィード</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 4 -->
+    <div class="template-card">
+      <div class="template-header template-type4">
+        <div class="template-number">4</div>
+        <div class="template-emoji">👨‍🍳</div>
+        <div class="template-name">人・裏側型</div>
+        <div class="template-subtitle">親近感で来店ハードルを下げる</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>店主やスタッフの人柄を見せて「この人に会いたい」と思わせる。初めての来店でも安心感を持ってもらう</p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容</h4>
+          <ul>
+            <li>店主の自己紹介、カフェへの想い</li>
+            <li>仕込みの様子、開店準備の裏側</li>
+            <li>スタッフの日常、チームの雰囲気</li>
+            <li>「今日のひとこと」などパーソナルな発信</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>「一人でも入りやすい」「常連さんみたいに扱ってくれそう」という安心感。特に一人客・女性客の来店ハードルを下げる</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">週2回</span>
+          <span class="tag tag-goal">信頼構築</span>
+          <span class="tag tag-format">ストーリーズ/リール</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 5 -->
+    <div class="template-card">
+      <div class="template-header template-type5">
+        <div class="template-number">5</div>
+        <div class="template-emoji">🎁</div>
+        <div class="template-name">限定・特典型</div>
+        <div class="template-subtitle">今すぐ行動させる仕掛け</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>「今行かないと損」という緊急性を作り、即日来店・即予約を促進</p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容</h4>
+          <ul>
+            <li>「本日限定10食」「売り切れ次第終了」</li>
+            <li>フォロワー限定割引・特典</li>
+            <li>季節限定メニュー、期間限定キャンペーン</li>
+            <li>「あと○席空いてます」リアルタイム情報</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>希少性・限定性で「今すぐ行動」を促す。ストーリーズで当日の空席情報を流し、即日来店客を獲得</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">毎日</span>
+          <span class="tag tag-goal">即時売上</span>
+          <span class="tag tag-format">ストーリーズ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 6: コンセプト世界観型 -->
+    <div class="template-card" style="border: 3px solid #eb2f96;">
+      <div class="template-header template-type6">
+        <div class="template-number">6</div>
+        <div class="template-emoji">🎬</div>
+        <div class="template-name">コンセプト世界観型</div>
+        <div class="template-subtitle">カフェの世界観を動画で体験させる</div>
+      </div>
+      <div class="template-body">
+        <div class="template-section">
+          <h4>目的</h4>
+          <p>カフェの世界観を15〜30秒の動画で体験させ、「この空間に行きたい」を一発で作る。<b>フォロー判断を即座に決定させる最重要コンテンツ。</b></p>
+        </div>
+        <div class="template-section">
+          <h4>投稿内容（コンセプト確定後に具体化）</h4>
+          <ul>
+            <li>カフェの世界観を凝縮した「雰囲気リール」（BGM＋空間＋メニュー＋人）</li>
+            <li>コンセプトに合った色味・トーンで統一した写真シリーズ</li>
+            <li>「なぜこのコンセプトなのか」店主の想いを語るリール</li>
+            <li>季節ごとにコンセプトの表現を変える（同じ世界観の四季版）</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>コンセプト動画の構成パターン（15秒版）</h4>
+          <ul>
+            <li><b>パターンA: 空間没入型</b> — ドアを開ける→店内パン→窓からの光→コーヒーのアップ→店主の笑顔</li>
+            <li><b>パターンB: 一日の流れ型</b> — 朝の準備→開店→お客さんの笑顔→夕方の店内→「今日もありがとう」</li>
+            <li><b>パターンC: 五感刺激型</b> — 豆を挽く音→湯気→ラテアート→ケーキの断面→一口目の表情</li>
+            <li><b>パターンD: ストーリーテリング型</b> — テキストオーバーレイで想いを語りながら、空間の映像を流す</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>コンセプト別の方向性例（ヒアリング後に確定）</h4>
+          <ul>
+            <li><b>和モダン系</b> → 障子の光、木の質感、抹茶ラテ、BGMは環境音</li>
+            <li><b>北欧系</b> → 白い壁、植物、シンプルな器、BGMはアコースティック</li>
+            <li><b>レトロ喫茶系</b> → 暖色照明、銅のケトル、プリン、BGMはジャズ</li>
+            <li><b>居酒屋×カフェ融合系</b> → 夜の居酒屋→朝のカフェの変身、二面性ギャップ</li>
+          </ul>
+        </div>
+        <div class="template-section">
+          <h4>売上への繋げ方</h4>
+          <p>世界観リールは「保存」「シェア」されやすく、アルゴリズム上最も有利。1本の良い世界観リールが数万リーチし、数百フォロワーを獲得する可能性がある。プロフィールの固定投稿にも設定。</p>
+        </div>
+        <div class="template-tags">
+          <span class="tag tag-frequency">月2〜4本（渾身の1本を作り込む）</span>
+          <span class="tag tag-goal">認知爆発・フォロー獲得</span>
+          <span class="tag tag-format">リール（最重要）</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== 投稿カレンダー例 ====== -->
+<section class="section">
+  <h2 class="section-title">📅 投稿カレンダー例（週間スケジュール）</h2>
+  
+  <div class="strategy-box">
+    <h3>売上最大化のための投稿スケジュール</h3>
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">曜日</th>
+            <th style="padding:12px; text-align:left;">フィード投稿</th>
+            <th style="padding:12px; text-align:left;">ストーリーズ</th>
+            <th style="padding:12px; text-align:left;">目的</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">月</td>
+            <td style="padding:12px;">建設ストーリー型</td>
+            <td style="padding:12px;">本日の空席情報</td>
+            <td style="padding:12px;">週初めの認知拡大</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">火</td>
+            <td style="padding:12px;">-</td>
+            <td style="padding:12px;">人・裏側型（仕込み風景）</td>
+            <td style="padding:12px;">親近感の醸成</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">水</td>
+            <td style="padding:12px;">メニュー魅力型（リール）</td>
+            <td style="padding:12px;">本日のおすすめ+限定情報</td>
+            <td style="padding:12px;">来店動機の創出</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">木</td>
+            <td style="padding:12px;"><b style="color:#eb2f96;">★ コンセプト世界観型（リール）</b></td>
+            <td style="padding:12px;">お客様の声シェア</td>
+            <td style="padding:12px;"><b>フォロー獲得の主力</b></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">金</td>
+            <td style="padding:12px;">食材ストーリー型</td>
+            <td style="padding:12px;">週末の予約状況</td>
+            <td style="padding:12px;">週末集客の準備</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">土</td>
+            <td style="padding:12px;">メニュー魅力型</td>
+            <td style="padding:12px;">本日満席御礼orまだ空席あり</td>
+            <td style="padding:12px;">週末売上の最大化</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">日</td>
+            <td style="padding:12px;">人・裏側型（リール）</td>
+            <td style="padding:12px;">来週の予告</td>
+            <td style="padding:12px;">次週への期待感</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--gray-700);">
+      <strong>ポイント:</strong> ストーリーズは毎日更新し、フィード投稿は週4〜5回。リールは週2〜3本で新規リーチを拡大。
+    </p>
+  </div>
+</section>
+
+<!-- ====== 各フェーズでの使い分け ====== -->
+<section class="section">
+  <h2 class="section-title">⏰ 開業フェーズ別 テンプレート活用法</h2>
+  
+  <div class="strategy-box">
+    <h3>開業前〜開業後で投稿テンプレートの使用比率を変える</h3>
+    <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px; background:var(--gold-bg); padding:16px; border-radius:8px;">
+      <b>★ ポイント:</b> コンセプト世界観型は全フェーズで常に投入する。建設ストーリーは丁寧に作り込む前提で量を絞る。
+    </p>
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <strong>オープン3ヶ月前〜</strong>
+        <p>建設ストーリー型 30%（丁寧に） + <b style="color:#eb2f96;">コンセプト世界観型 30%</b> + 人・裏側型 25% + 食材ストーリー型 15%<br>
+        → 「こんなカフェができる」認知拡大 ＋ 世界観で「行きたい」を作る</p>
+      </div>
+      <div class="strategy-item">
+        <strong>オープン1ヶ月前</strong>
+        <p><b style="color:#eb2f96;">コンセプト世界観型 30%</b> + メニュー魅力型 30% + 限定・特典型 25% + 建設ストーリー型 15%<br>
+        → 世界観リールで新規フォロワー爆増 ＋ メニューで来店動機強化</p>
+      </div>
+      <div class="strategy-item">
+        <strong>オープン〜3ヶ月</strong>
+        <p>メニュー魅力型 30% + <b style="color:#eb2f96;">コンセプト世界観型 25%</b> + 限定・特典型 25% + 人・裏側型 20%<br>
+        → 世界観リールで新規獲得を続けつつ、リピーターを作る</p>
+      </div>
+      <div class="strategy-item">
+        <strong>安定期（4ヶ月目〜）</strong>
+        <p>限定・特典型 30% + メニュー魅力型 25% + <b style="color:#eb2f96;">コンセプト世界観型 20%</b> + 人・裏側型 15% + 食材ストーリー型 10%<br>
+        → 売上安定 ＋ 世界観リールは月2本で新規流入を維持</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 開店前フォロワー育成戦略 ====== -->
+<section class="section">
+  <h2 class="section-title">🎯 最重要戦略: 開店前にフォロワーを育て、オープン告知を最大効果で届ける</h2>
+
+  <div class="strategy-box" style="border: 3px solid var(--red); background: var(--red-bg);">
+    <h3 style="color: var(--red);">なぜ「開店前の発信」が全てを決めるのか</h3>
+    <p style="font-size: 15px; color: var(--gray-700); margin-bottom: 16px;">
+      <b>成功パターン:</b> 開店前にフォロワーを育てる → オープン告知が数千人に届く → 初日から満席<br>
+      <b>失敗パターン:</b> オープンしてからアカウント開設 → フォロワー0人に告知 → 誰にも届かない
+    </p>
+    <div class="strategy-grid">
+      <div class="strategy-item" style="background: var(--white);">
+        <strong>📊 実績データ</strong>
+        <p>
+          ・和食居酒屋B: オープン1ヶ月前から運用 → <b>開業前にフォロワー4,000人獲得</b> → オープン後ランチから行列、ディナー予約満杯<br>
+          ・焼肉店C: 開業前からインスタ集客 → <b>オープン時点で予約100組以上確定</b> → 初日から満席<br>
+          ・スズノイエ: リノベ過程を毎日発信 → オープン初日から満席
+        </p>
+      </div>
+      <div class="strategy-item" style="background: var(--white);">
+        <strong>🎯 てっちゃんカフェの目標</strong>
+        <p>
+          ・<b>オープン前にフォロワー3,000〜4,000人</b>を目指す<br>
+          ・オープン告知が最低3,000人に届く状態を作る<br>
+          ・<b>オープン初週で予約50組以上</b>を確定させる<br>
+          ・開店初日から「行列ができる店」のイメージを作る
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>開店前 90日カウントダウンロードマップ</h3>
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">期間</th>
+            <th style="padding:12px; text-align:left;">やること</th>
+            <th style="padding:12px; text-align:left;">目標フォロワー</th>
+            <th style="padding:12px; text-align:left;">KPI</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:var(--blue);">Day 1〜30<br>（3ヶ月前）</td>
+            <td style="padding:12px;">
+              ・アカウント開設＋初投稿「カフェ作ります」<br>
+              ・工事進捗を<b>丁寧に作り込んで</b>週1〜2回投稿<br>
+              ・<b style="color:#eb2f96;">カフェのコンセプトを確定→世界観の方向性を決める</b><br>
+              ・香椎エリアのアカウントをフォロー・交流<br>
+              ・地元グルメ系アカウントにDMで挨拶
+            </td>
+            <td style="padding:12px; font-weight:700;">500人</td>
+            <td style="padding:12px;">投稿の保存数・シェア数</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:var(--green);">Day 31〜60<br>（2ヶ月前）</td>
+            <td style="padding:12px;">
+              ・<b style="color:#eb2f96;">コンセプト世界観リール第1弾を公開（渾身の1本）</b><br>
+              ・リール動画を週2本開始（工事Before→After＋世界観）<br>
+              ・メニュー試作過程を公開<br>
+              ・ローカルインフルエンサー（3,000〜1万人）に商品提供オファー<br>
+              ・ストーリーズでアンケート「どんなメニューが食べたい？」
+            </td>
+            <td style="padding:12px; font-weight:700;">1,500人</td>
+            <td style="padding:12px;">リール再生数・DM数</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700; color:var(--gold);">Day 61〜80<br>（1ヶ月前）</td>
+            <td style="padding:12px;">
+              ・<b style="color:#eb2f96;">完成した店内でコンセプト世界観リール決定版を撮影・公開</b><br>
+              ・カウントダウン投稿開始<br>
+              ・メニュー完成の発表<br>
+              ・「先行予約DM受付中」を開始<br>
+              ・インフルエンサーの店舗訪問（プレオープン試食会）
+            </td>
+            <td style="padding:12px; font-weight:700;">3,000人</td>
+            <td style="padding:12px;">DM予約数・保存数</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700; color:var(--red);">Day 81〜90<br>（直前10日）</td>
+            <td style="padding:12px;">
+              ・毎日カウントダウン投稿<br>
+              ・「オープン初日限定メニュー」発表<br>
+              ・ストーリーズで「あと○日」毎日更新<br>
+              ・フォロワー限定特典（初日来店で○○プレゼント）を告知
+            </td>
+            <td style="padding:12px; font-weight:700;">3,500〜4,000人</td>
+            <td style="padding:12px;">予約確定数50組以上</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="strategy-box" style="border: 3px solid var(--purple); background: var(--purple-bg);">
+    <h3 style="color: var(--purple);">てっちゃんにしかできない「最大の武器」</h3>
+    <p style="font-size: 15px; color: var(--gray-700); margin-bottom: 20px;">
+      普通の新規カフェは「0から始める」しかない。<br>
+      <b>でもてっちゃんは違う。既に居酒屋「食酒家拠り所てっちゃん」が地域に根付いている。</b><br>
+      居酒屋を続けながら新たにカフェを作る ー この「既存のお客さんと接点がある状態での新規出店」が、普通の新規カフェには絶対に真似できない武器になる。
+    </p>
+
+    <div class="strategy-grid">
+      <div class="strategy-item" style="background: var(--white);">
+        <strong style="color: var(--purple);">武器①: 居酒屋てっちゃんの既存客を初動フォロワーに</strong>
+        <p>
+          <b>いきなりフォロワー数百人のスタートラインに立てる。</b><br><br>
+          ・居酒屋の常連さんに「今度カフェも始めるんです。インスタ始めました」と直接声をかける<br>
+          ・居酒屋の店内にQRコード設置「新しくカフェ作ります！アカウントはこちら」<br>
+          ・居酒屋に来るお客さん全員にカフェのインスタを案内（レジ横POP、メニュー表に挟むなど）<br>
+          ・常連さんは「てっちゃんがカフェも始めるの？」と興味を持つ → 自然にフォロー<br><br>
+          <b>見込み: 居酒屋の常連・知人だけで100〜300人は初動で獲得可能</b>
+        </p>
+      </div>
+      <div class="strategy-item" style="background: var(--white);">
+        <strong style="color: var(--purple);">武器②: 「居酒屋の人がカフェを作る」というギャップ</strong>
+        <p>
+          <b>「新しいカフェができます」より「あの居酒屋のてっちゃんがカフェも作るらしい」の方がはるかに話題になる。</b><br><br>
+          ・「夜は居酒屋、昼はカフェ。同じ人が作る全く違う2つの顔」→ コンテンツとしてユニーク<br>
+          ・居酒屋の人気メニューをカフェ風にアレンジする過程 → 「てっちゃんぽん風カフェラテ」のような遊び心<br>
+          ・居酒屋で培った料理の腕 × カフェの新しい挑戦 → 「居酒屋で鍛えた料理人がコーヒーに本気出した」<br>
+          ・居酒屋の仕込み → カフェの仕込み、両方見せる「1日密着」リール<br><br>
+          <b>地元の人なら「えっ、てっちゃんがカフェも始めるの？」と友達にDMでシェアする。これがアルゴリズム的にも最強。</b>
+        </p>
+      </div>
+      <div class="strategy-item" style="background: var(--white);">
+        <strong style="color: var(--purple);">武器④: 居酒屋を「集客装置」として使える</strong>
+        <p>
+          <b>居酒屋が営業している限り、毎日お客さんと接点がある。この「リアルの接点」は新規カフェにはない最大の資産。</b><br><br>
+          ・居酒屋に来るお客さん = 毎日のフォロワー獲得チャンス<br>
+          ・居酒屋のテーブルに「カフェのインスタやってます」のPOP → 毎日数人がフォロー<br>
+          ・居酒屋の会計時「カフェのフォローで次回ドリンク1杯サービス」→ フォロー率UP<br>
+          ・居酒屋のお客さんにカフェの試作品を味見してもらう → 「これインスタに載せていいですか？」<br>
+          ・居酒屋の常連さんがカフェのオープンを口コミで広げてくれる<br><br>
+          <b>居酒屋の営業日数 × 1日あたりの来客数 = オンラインだけでは絶対に作れないフォロワー獲得経路</b>
+        </p>
+      </div>
+    </div>
+
+    <div style="background: var(--white); border-left: 4px solid var(--purple); border-radius: 12px; padding: 20px 24px; margin-top: 24px;">
+      <strong style="display:block; font-size:15px; color:var(--purple); margin-bottom:8px;">💡 なぜこれが「ありきたりじゃない」のか</strong>
+      <p style="font-size:14px; color:var(--gray-700); line-height:1.8;">
+        <b>普通の新規カフェ:</b> オンラインだけでフォロワーを集めるしかない。リアルの接点ゼロ。<br>
+        <b>てっちゃん:</b> 居酒屋という「毎日お客さんが来るリアル店舗」を既に持っている。<br><br>
+        居酒屋のお客さんに声をかけるだけで初動フォロワーが取れる。<br>
+        居酒屋の口コミ・評判がカフェの信頼になる。<br>
+        「居酒屋の人がカフェも作る」というギャップがコンテンツになる。<br><br>
+        <b>オンライン施策（リール・いいね回り）だけで3,000人は確かに難しい。<br>
+        でも「居酒屋というリアル集客装置」を持っているてっちゃんなら、オンライン＋オフラインの掛け合わせで到達できる。</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="strategy-box" style="border: 3px solid var(--blue);">
+    <h3 style="color: var(--blue);">＋ フォロワー3,000人を加速する「毎日のアクション」</h3>
+    <p style="font-size: 15px; color: var(--gray-700); margin-bottom: 20px;">
+      上記の「てっちゃんにしかできないコンテンツ」に加えて、地道なアクションの積み上げで確実に3,000人に届かせる。<br>
+      以下は「1日30分でできる」サポートアクション。
+    </p>
+
+    <div style="overflow-x:auto; margin-top:20px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--blue); color:var(--white);">
+          <tr>
+            <th style="padding:12px; text-align:left;">アクション</th>
+            <th style="padding:12px; text-align:left;">やり方</th>
+            <th style="padding:12px; text-align:left;">期待効果</th>
+            <th style="padding:12px; text-align:left;">1日の目安</th>
+          </tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">① いいね回り<br>（ターゲット型）</td>
+            <td style="padding:12px;">
+              「#香椎」「#香椎グルメ」「#福岡カフェ」で検索し、<b>香椎・東区エリアの住民</b>の投稿にいいね。<br>
+              ※無差別にやらない。地元の人だけに絞る。<br>
+              ※短時間に集中せず、朝・昼・夕に分ける（スパム判定防止）
+            </td>
+            <td style="padding:12px;">いいね通知 → プロフィール訪問 → フォロー。<br>地元ユーザーなので実際に来店する可能性が高い</td>
+            <td style="padding:12px; font-weight:700;">30〜50件<br>（3回に分ける）</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">② コメント回り<br>（関係構築型）</td>
+            <td style="padding:12px;">
+              香椎エリアの飲食店・ショップ・美容院などのアカウントに<b>意味のあるコメント</b>を残す。<br>
+              例:「素敵なお店ですね！近くでカフェを準備中です、よろしくお願いします」<br>
+              ※「いいですね！」だけのコメントは効果薄
+            </td>
+            <td style="padding:12px;">地域コミュニティとの繋がり。<br>相手のフォロワーにも認知される</td>
+            <td style="padding:12px; font-weight:700;">10〜15件</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">③ DM営業<br>（インフルエンサー）</td>
+            <td style="padding:12px;">
+              福岡のグルメ系アカウント（フォロワー3,000〜1万人）に直接DMを送る。<br>
+              「○月に香椎でカフェをオープンします。プレオープンにご招待させていただけませんか？」<br>
+              <b>報酬なし・商品提供のみでOK</b>（マイクロインフルエンサーは商品提供だけで受けてくれることが多い）
+            </td>
+            <td style="padding:12px;">
+              1人のインフルエンサーが投稿 → その人のフォロワー数千人にリーチ<br>
+              <b>実例: フォロワー2桁の店が、1人の投稿で翌日5組10名来店</b>
+            </td>
+            <td style="padding:12px; font-weight:700;">週3〜5通</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">④ リール投稿<br>（新規リーチ）</td>
+            <td style="padding:12px;">
+              フォロワー以外に届く唯一の武器。<b>フィード投稿はフォロワーにしか届かないが、リールは全ユーザーに届く。</b><br>
+              工事Before→After、調理過程、食材紹介を15秒で。<br>
+              トレンド音源を使うとリーチ3〜5倍。
+            </td>
+            <td style="padding:12px;">
+              1本のリールで数千〜数万リーチの可能性。<br>
+              バズれば1本で数百フォロワー増加もありえる
+            </td>
+            <td style="padding:12px; font-weight:700;">週2〜3本</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">⑤ ストーリーズ<br>（既存フォロワー維持）</td>
+            <td style="padding:12px;">
+              アンケート機能「どっちのメニューが食べたい？」<br>
+              質問機能「カフェに何を求めますか？」<br>
+              カウントダウンスタンプ「オープンまであと○日」<br>
+              → <b>フォロワーが参加できるコンテンツ</b>でエンゲージメントを高める
+            </td>
+            <td style="padding:12px;">フォロワーとの関係深化。<br>アルゴリズム的にも「関係性が深いアカウント」と評価される</td>
+            <td style="padding:12px; font-weight:700;">毎日1〜3件</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">⑥ 地域メディアへの<br>アプローチ</td>
+            <td style="padding:12px;">
+              <b>@fukuoka___cafe</b>（福岡カフェ日記）などの地域グルメメディアにDMで取材依頼。<br>
+              地域の情報サイト・フリーペーパーにもプレスリリース。<br>
+              「香椎に新しいカフェができます」のネタは地域メディアにとっても価値がある。
+            </td>
+            <td style="padding:12px;">
+              地域メディアに1回取り上げられるだけで数百フォロワー増加の可能性
+            </td>
+            <td style="padding:12px; font-weight:700;">月2〜3回</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">⑦ プレオープン<br>招待イベント</td>
+            <td style="padding:12px;">
+              オープン1〜2週間前に「プレオープン試食会」を開催。<br>
+              インフルエンサー5〜10名 ＋ 地域の人10〜20名を招待。<br>
+              条件:「Instagramに投稿してください」の一言だけ。<br>
+              <b>招待された全員が同じ日に投稿 → 一気にタイムラインをジャック</b>
+            </td>
+            <td style="padding:12px;">
+              10人が同時投稿 → 各人のフォロワーに一斉リーチ<br>
+              <b>1回のイベントで500〜1,000フォロワー増も現実的</b>
+            </td>
+            <td style="padding:12px; font-weight:700;">オープン2週間前に1回</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background: var(--gold-bg); border-left: 4px solid var(--gold); border-radius: 12px; padding: 20px 24px; margin-top: 24px;">
+      <strong style="display:block; font-size:15px; color:var(--gold); margin-bottom:8px;">📊 フォロワー増加の内訳シミュレーション（90日間）- てっちゃん版</strong>
+      <p style="font-size:14px; color:var(--gray-700); line-height:1.8;">
+        <b style="color:var(--purple);">【てっちゃん独自の武器（オフライン）】</b><br>
+        <b>居酒屋の来客からの直接フォロー:</b> 1日3〜5人 × 90日 = <b>約270〜450人</b>（← 新規カフェには不可能）<br>
+        <b>居酒屋の常連・知人への初動アナウンス:</b> <b>約100〜200人</b><br>
+        <b>居酒屋での試作品味見 → お客さんのインスタ投稿:</b> <b>約50〜100人</b><br>
+        <br>
+        <b style="color:var(--blue);">【オンライン施策】</b><br>
+        <b>リール動画（工事過程・ギャップコンテンツ）:</b> 週2本 × 13週 = <b>約500〜1,000人</b><br>
+        <b>いいね・コメント回り:</b> 90日間の積み上げ = <b>約200〜300人</b><br>
+        <b>インフルエンサー経由:</b> 5人 × 平均100フォロー = <b>約500人</b><br>
+        <b>プレオープンイベント:</b> <b>約500〜1,000人</b><br>
+        <b>地域メディア掲載:</b> <b>約200〜300人</b><br>
+        <br>
+        <b style="font-size:16px; color:var(--primary);">合計: 約2,300〜3,850人</b><br>
+        <br>
+        <b>ポイント:</b> てっちゃんは「居酒屋」というリアル店舗を使って毎日フォロワーを獲得できる。<br>
+        オフラインだけで420〜750人。これは新規カフェには絶対にできない。<br>
+        オンライン施策と合わせれば3,000人は現実的な数字。<br>
+        <b>さらに「居酒屋の人がカフェを作る」ギャップのリールがバズれば上振れする。</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>2026年アルゴリズム対応: 「シェアされる投稿」の設計</h3>
+    <p style="font-size: 14px; color: var(--gray-700); margin-bottom: 16px;">
+      2025年12月のInstagram公式発表により、アルゴリズムの評価指標が大きく変化。<br>
+      <b>最重要KPI: シェア（DM送信） > 保存 > 視聴完了率</b>
+    </p>
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <strong>「友達に教えたくなる」投稿</strong>
+        <p>
+          ・「香椎に○月、こんなカフェができるらしい」→ 友達にDMでシェア<br>
+          ・限定情報（先行予約、初日特典）→ 一緒に行く相手にシェア<br>
+          ・工事Before→After動画 → 驚きでシェア
+        </p>
+      </div>
+      <div class="strategy-item">
+        <strong>「保存して後で見返す」投稿</strong>
+        <p>
+          ・メニュー一覧の投稿 → 「今度行く時用に保存」<br>
+          ・営業時間・場所・アクセスまとめ → 実用的な保存<br>
+          ・「香椎エリアのおすすめカフェ」として保存される
+        </p>
+      </div>
+      <div class="strategy-item">
+        <strong>ハッシュタグ新ルール（2026年〜）</strong>
+        <p>
+          ・<b>上限5個</b>に制限（以前は30個）<br>
+          ・AIが画像・キャプションを直接読んで内容を判断するため、ハッシュタグ依存度は低下<br>
+          ・キャプション本文にキーワードを自然に含めることが重要<br>
+          ・5個は「エリア名」「ジャンル」「特徴」で厳選
+        </p>
+      </div>
+      <div class="strategy-item">
+        <strong>リール動画の最適構成</strong>
+        <p>
+          ・<b>15秒構成</b>:「材料→調理→完成→食べる瞬間」<br>
+          ・トレンド音源を使うとリーチが<b>3〜5倍</b><br>
+          ・撮影は午前10時〜午後3時の自然光がベスト<br>
+          ・投稿時間: 平日12-13時/19-21時、土日10-11時/17-23時
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>Meta広告の併用（オプション: 月5万円〜）</h3>
+    <p style="font-size: 14px; color: var(--gray-700); margin-bottom: 16px;">
+      オーガニック運用に加えて、Meta広告でブーストする選択肢。特にオープン直前の1ヶ月間に効果的。
+    </p>
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <strong>月5万円の広告で見込める効果</strong>
+        <p>
+          ・リーチ: 約52,000人<br>
+          ・プロフィールアクセス: 約4,800件<br>
+          ・予約確定: 約45件<br>
+          ・<b>予想売上: 約45万円</b>（広告費の9倍）
+        </p>
+      </div>
+      <div class="strategy-item">
+        <strong>配信設定</strong>
+        <p>
+          ・エリア: 香椎・千早・東区を中心に半径3〜5km<br>
+          ・ターゲット: 20〜40代<br>
+          ・日予算: 1,000〜3,000円からスタート<br>
+          ・最低1週間は継続して効果測定
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<div class="cta-box">
+  <h3>ゴール: オープン当日に「待ってました！」の行列を作る</h3>
+  <p>開店前90日間でフォロワー3,000〜4,000人を獲得し、<br>オープン告知が最大効果で届く状態を作る。<br>「オープンしました」の投稿と同時に、予約が殺到する仕組みを完成させます。</p>
+</div>
+
+<!-- ====== ヒアリング項目 ====== -->
+<section class="section" style="margin-top: 60px;">
+  <h2 class="section-title">📝 確認事項（ヒアリング）</h2>
+
+  <div class="strategy-box">
+    <h3>A. カフェの基本情報</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">質問</th><th style="padding:12px; min-width:300px;">回答</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">カフェの場所は？（居酒屋と同じ建物？別？）</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">席数は？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">営業時間は？（昼だけ？夜もやる？）</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">オープン予定はいつ？</td><td style="padding:12px;"></td></tr>
+          <tr><td style="padding:12px;">工事はいつから始まる（始まっている）？</td><td style="padding:12px;"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>B. コンセプト・メニュー</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">質問</th><th style="padding:12px; min-width:300px;">回答</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">どんなカフェにしたい？（コーヒー特化？食事メイン？スイーツ？）</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300); background:#fff0f6;"><td style="padding:12px;"><b style="color:#eb2f96;">★ カフェの「テーマ」「世界観」はある？</b>（例: 和モダン、北欧風、レトロ喫茶、自然派など）<br><span style="font-size:12px; color:var(--gray-500);">※ テーマが明確なほどInstagramでの世界観構築がしやすく、フォロワー獲得に直結する</span></td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300); background:#fff0f6;"><td style="padding:12px;"><b style="color:#eb2f96;">★ 「このカフェを一言で表すと？」</b>（例: 「居酒屋の人が本気で作った朝の拠り所」など）<br><span style="font-size:12px; color:var(--gray-500);">※ この一言がInstagramのプロフィール文・世界観動画のコアメッセージになる</span></td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">看板メニューになりそうなものは？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">自家焙煎はやる？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">居酒屋のメニューとの関連性はある？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">価格帯はどのくらい？</td><td style="padding:12px;"></td></tr>
+          <tr><td style="padding:12px;">テイクアウトはやる？</td><td style="padding:12px;"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>C. ターゲット・競合</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">質問</th><th style="padding:12px; min-width:300px;">回答</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">誰に来てほしい？（年齢層・性別・一人客？グループ？）</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">香椎エリアで意識してる競合カフェはある？</td><td style="padding:12px;"></td></tr>
+          <tr><td style="padding:12px;">他のカフェにはない「うちだけの強み」は何？</td><td style="padding:12px;"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="strategy-box">
+    <h3>D. 現状のSNS・予算</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">質問</th><th style="padding:12px; min-width:300px;">回答</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">居酒屋のインスタアカウントはある？フォロワー数は？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">カフェのアカウントはもう作ってる？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">写真・動画の撮影は自分たちでやれそう？</td><td style="padding:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-300);"><td style="padding:12px;">Instagram広告（Meta広告）の予算は考えてる？</td><td style="padding:12px;"></td></tr>
+          <tr><td style="padding:12px;">月の売上目標は？</td><td style="padding:12px;"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ネクストステップ ====== -->
+<section class="section">
+  <h2 class="section-title">🔜 ネクストステップ</h2>
+  <div class="strategy-box">
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead style="background:var(--gray-900); color:var(--white);">
+          <tr><th style="padding:12px;">ステップ</th><th style="padding:12px;">内容</th><th style="padding:12px;">タイミング</th></tr>
+        </thead>
+        <tbody style="background:var(--white);">
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">1. ヒアリング内容をもとに戦略確定</td>
+            <td style="padding:12px;">カフェのコンセプト・ターゲット・メニューに合わせて投稿戦略を最終調整</td>
+            <td style="padding:12px;">ヒアリング後1週間以内</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">2. アカウント設計・構築</td>
+            <td style="padding:12px;">カフェ専用アカウント開設 / プロフィール設計 / ハイライト設計</td>
+            <td style="padding:12px;">戦略確定後すぐ</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-300);">
+            <td style="padding:12px; font-weight:700;">3. テンプレート制作</td>
+            <td style="padding:12px;">5種の投稿テンプレートをカフェのコンセプトに合わせて制作</td>
+            <td style="padding:12px;">アカウント開設と並行</td>
+          </tr>
+          <tr>
+            <td style="padding:12px; font-weight:700;">4. 運用開始</td>
+            <td style="padding:12px;">初投稿 → 90日ロードマップに沿って運用スタート</td>
+            <td style="padding:12px;">工事開始と同時が理想</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>
