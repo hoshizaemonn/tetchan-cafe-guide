@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>てっちゃんカフェ｜投稿テンプレート5本 & 投稿コンテンツ10本</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --primary: #8B4513;
+    --primary-light: #A0522D;
+    --primary-bg: #FFF8DC;
+    --dark: #1a1a1a;
+    --gray-900: #262626;
+    --gray-700: #595959;
+    --gray-500: #8c8c8c;
+    --gray-300: #d9d9d9;
+    --gray-100: #f5f5f5;
+    --white: #ffffff;
+    --green: #389e0d;
+    --green-bg: #f6ffed;
+    --blue: #096dd9;
+    --blue-bg: #e6f7ff;
+    --gold: #d48806;
+    --gold-bg: #fffbe6;
+    --purple: #722ed1;
+    --purple-bg: #f9f0ff;
+    --red: #cf1322;
+    --red-bg: #fff1f0;
+    --pink: #eb2f96;
+    --pink-bg: #fff0f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #fafafa;
+    color: var(--dark);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #4A2C2A 0%, #6F4E37 50%, #8B4513 100%);
+    color: var(--white);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
+  .hero p { font-size: 16px; opacity: 0.9; }
+  .hero .meta { font-size: 13px; opacity: 0.6; margin-top: 16px; }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+
+  .part-divider {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 32px 40px;
+    text-align: center;
+    margin: 60px 0 40px;
+    border-radius: 16px;
+  }
+  .part-divider h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+  .part-divider p { font-size: 15px; opacity: 0.9; }
+
+  .section { margin-bottom: 60px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 6px solid var(--primary);
+  }
+
+  /* テンプレートカード */
+  .template-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 32px;
+    border: 2px solid var(--gray-300);
+  }
+  .template-card .header {
+    padding: 24px;
+    color: var(--white);
+  }
+  .type-1 { background: linear-gradient(135deg, #096dd9 0%, #1890ff 100%); }
+  .type-2 { background: linear-gradient(135deg, #389e0d 0%, #52c41a 100%); }
+  .type-3 { background: linear-gradient(135deg, #d48806 0%, #faad14 100%); }
+  .type-4 { background: linear-gradient(135deg, #722ed1 0%, #9254de 100%); }
+  .type-5 { background: linear-gradient(135deg, #cf1322 0%, #f5222d 100%); }
+
+  .template-card .header h3 { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+  .template-card .header .sub { font-size: 13px; opacity: 0.9; }
+
+  .template-card .body { padding: 24px; }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .info-item {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .info-item .label { font-size: 11px; color: var(--gray-500); font-weight: 700; }
+  .info-item .value { font-size: 14px; font-weight: 700; color: var(--dark); margin-top: 4px; }
+
+  .caption-box {
+    background: var(--blue-bg);
+    border-left: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .caption-box h4 { font-size: 13px; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+  .caption-box pre {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .hashtag-box {
+    background: var(--gold-bg);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .cta-box {
+    background: var(--pink-bg);
+    border-left: 4px solid var(--pink);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .cta-box strong { font-size: 12px; color: var(--pink); }
+  .cta-box p { font-size: 13px; color: var(--gray-700); margin-top: 4px; }
+
+  .photo-note {
+    background: var(--green-bg);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .photo-note strong { font-size: 12px; color: var(--green); }
+  .photo-note p { font-size: 13px; color: var(--gray-700); margin-top: 4px; }
+
+  /* 投稿カード */
+  .post-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    border: 2px solid var(--gray-300);
+  }
+  .post-card .post-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .post-num {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 900; color: var(--white);
+    flex-shrink: 0;
+  }
+  .post-card .post-header h3 { font-size: 18px; font-weight: 900; }
+  .post-card .post-header .post-type { font-size: 12px; color: var(--gray-500); }
+  .post-card .post-body { padding: 24px; }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .photo-thumb {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  .timing-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .badge-week1 { background: #e6f7ff; color: #096dd9; }
+  .badge-week2 { background: #f6ffed; color: #389e0d; }
+  .badge-week3 { background: #fffbe6; color: #d48806; }
+  .badge-week4 { background: #fff1f0; color: #cf1322; }
+  .badge-stories { background: #f9f0ff; color: #722ed1; }
+  .badge-feed { background: #e6f7ff; color: #096dd9; }
+  .badge-reel { background: #fff0f6; color: #eb2f96; }
+
+  /* 素材マップ */
+  .map-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 20px 0; }
+  .map-table thead { background: var(--gray-900); color: var(--white); }
+  .map-table th { padding: 10px 12px; text-align: left; font-weight: 600; }
+  .map-table td { padding: 10px 12px; border-bottom: 1px solid var(--gray-300); }
+  .map-table tr:hover { background: var(--gray-100); }
+
+  .summary-box {
+    background: linear-gradient(135deg, #f0faf5 0%, #e8f5ee 100%);
+    border: 2px solid var(--green);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+  .summary-box h3 { color: var(--green); font-size: 16px; margin-bottom: 12px; }
+
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 24px; }
+    .info-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>てっちゃんカフェ 投稿プラン</h1>
+  <p>投稿テンプレート5本 & 投稿コンテンツ10本</p>
+  <div class="meta">見積項目: 投稿用テンプレート制作 ×5 / 投稿コンテンツ制作 ×10</div>
+</div>
+
+<div class="container">
+
+<!-- ====== 素材マップ ====== -->
+<section class="section">
+  <h2 class="section-title">カフェ素材 20枚 → 投稿への割り振り</h2>
+
+  <table class="map-table">
+    <thead>
+      <tr>
+        <th>カテゴリ</th>
+        <th>ファイル名</th>
+        <th>内容</th>
+        <th>使用する投稿</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3" style="font-weight:700; color:var(--blue);">外観<br>（看板あり）</td>
+        <td>S__77692956_0.jpg</td>
+        <td>「おでんと焼いもの てっちゃん」看板・正面</td>
+        <td>投稿①③</td>
+      </tr>
+      <tr>
+        <td>S__77692972_0.jpg</td>
+        <td>看板＋店内が見える全景</td>
+        <td>投稿①⑥</td>
+      </tr>
+      <tr>
+        <td>S__77692974_0.jpg</td>
+        <td>看板＋外観（別角度）</td>
+        <td>投稿⑥</td>
+      </tr>
+      <tr>
+        <td rowspan="4" style="font-weight:700; color:var(--green);">外観<br>（雰囲気）</td>
+        <td>S__77692955_0.jpg</td>
+        <td>店舗正面（ガラス戸・ストリングライト）</td>
+        <td>投稿②</td>
+      </tr>
+      <tr>
+        <td>S__77692969_0.jpg</td>
+        <td>ストリングライト（軒先の電球）</td>
+        <td>投稿②⑧</td>
+      </tr>
+      <tr>
+        <td>S__77692971_0.jpg</td>
+        <td>開口部から見える内装（明るい）</td>
+        <td>投稿④⑦</td>
+      </tr>
+      <tr>
+        <td>S__77692973_0.jpg</td>
+        <td>全景（ワイドショット）</td>
+        <td>投稿⑩</td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="font-weight:700; color:var(--gold);">内装<br>（完成度高）</td>
+        <td>S__77692957_0.jpg</td>
+        <td>木目カウンター＋ガラス天板</td>
+        <td>投稿④⑤</td>
+      </tr>
+      <tr>
+        <td>S__77692958_0.jpg</td>
+        <td>壁面の木製棚（ディスプレイ用）</td>
+        <td>投稿⑤</td>
+      </tr>
+      <tr>
+        <td rowspan="5" style="font-weight:700; color:var(--purple);">外構<br>（レンガ・入口）</td>
+        <td>S__77692960_0.jpg</td>
+        <td>レンガタイル＋木フロアの境界</td>
+        <td>投稿③</td>
+      </tr>
+      <tr>
+        <td>S__77692961_0.jpg</td>
+        <td>入口段差（木フロア→レンガ）</td>
+        <td>投稿③</td>
+      </tr>
+      <tr>
+        <td>S__77692962_0.jpg</td>
+        <td>レンガ外構（雨の日）</td>
+        <td>投稿⑨</td>
+      </tr>
+      <tr>
+        <td>S__77692963_0.jpg</td>
+        <td>入口から外を見た景色（足元）</td>
+        <td>投稿⑨</td>
+      </tr>
+      <tr>
+        <td>S__77692964_0.jpg</td>
+        <td>カウンター越しの通路</td>
+        <td>投稿⑦</td>
+      </tr>
+      <tr>
+        <td rowspan="4" style="font-weight:700; color:var(--red);">ビル・周辺</td>
+        <td>S__77692953_0.jpg</td>
+        <td>橋口ビル入口（ビル名表示）</td>
+        <td>投稿⑩</td>
+      </tr>
+      <tr>
+        <td>S__77692970_0.jpg</td>
+        <td>橋口ビル入口（別角度）</td>
+        <td>投稿⑩</td>
+      </tr>
+      <tr>
+        <td>S__77692967_0.jpg</td>
+        <td>窓ガラス内側</td>
+        <td>投稿⑧</td>
+      </tr>
+      <tr>
+        <td>S__77692968_0.jpg</td>
+        <td>外壁・通りの雰囲気</td>
+        <td>投稿⑧</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700; color:var(--gray-500);">設備</td>
+        <td>S__77692959_0.jpg</td>
+        <td>換気扇</td>
+        <td>投稿⑨（裏側ネタ）</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ====== 追加撮影依頼リスト ====== -->
+<section class="section">
+  <h2 class="section-title" style="border-color: var(--red);">先方への追加撮影依頼リスト</h2>
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:20px;">
+    現在の素材20枚は「改装中の外観・内装」が中心。投稿のバリエーションを広げるために、以下の撮影を依頼してください。<b>スマホ撮影でOK。</b>
+  </p>
+
+  <table class="map-table">
+    <thead>
+      <tr>
+        <th>優先度</th>
+        <th>撮ってほしいもの</th>
+        <th>撮り方のポイント</th>
+        <th>使う投稿</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: #fff1f0;">
+        <td style="font-weight:900; color:var(--red);">必須</td>
+        <td><b>店主（てっちゃん）の顔写真</b></td>
+        <td>笑顔で。カウンターの前 or 店舗入口で。自然光（昼間）がベスト。上半身で十分</td>
+        <td>投稿①④⑤</td>
+      </tr>
+      <tr style="background: #fff1f0;">
+        <td style="font-weight:900; color:var(--red);">必須</td>
+        <td><b>居酒屋営業中の様子</b>（夜の店内）</td>
+        <td>お客さんがいる状態（後ろ姿でOK）。暖かい照明。「夜はこうだけど昼はカフェ」のギャップ用</td>
+        <td>投稿③⑥</td>
+      </tr>
+      <tr style="background: #fff1f0;">
+        <td style="font-weight:900; color:var(--red);">必須</td>
+        <td><b>コーヒーを淹れる手元</b></td>
+        <td>ドリッパーにお湯を注ぐ瞬間。湯気が見えるとベスト。カウンターの上で撮影。動画15秒もあると最高</td>
+        <td>投稿⑦⑧</td>
+      </tr>
+      <tr style="background: #fffbe6;">
+        <td style="font-weight:700; color:var(--gold);">高</td>
+        <td><b>メニュー（試作品）</b></td>
+        <td>完成した料理・スイーツを上から or 斜め45度で。白い皿に盛ると映える。自然光で</td>
+        <td>追加投稿用</td>
+      </tr>
+      <tr style="background: #fffbe6;">
+        <td style="font-weight:700; color:var(--gold);">高</td>
+        <td><b>工事の動画（15秒）</b></td>
+        <td>ペンキ塗り、棚の取り付け、掃除など。作業音をそのまま録る（BGMは後から乗せる）</td>
+        <td>投稿③リール</td>
+      </tr>
+      <tr style="background: #e6f7ff;">
+        <td style="font-weight:700; color:var(--blue);">中</td>
+        <td><b>おでん・焼いもの写真</b></td>
+        <td>居酒屋の看板メニュー。「夜のてっちゃん」を見せる素材。湯気が出てるとベスト</td>
+        <td>投稿⑥</td>
+      </tr>
+      <tr style="background: #e6f7ff;">
+        <td style="font-weight:700; color:var(--blue);">中</td>
+        <td><b>完成した内装（全体）</b></td>
+        <td>工事が終わった状態の店内。入口から奥に向かって撮る構図。照明を点けた状態で</td>
+        <td>投稿⑩</td>
+      </tr>
+      <tr style="background: #e6f7ff;">
+        <td style="font-weight:700; color:var(--blue);">中</td>
+        <td><b>香椎の街並み</b>（店の周辺）</td>
+        <td>最寄り駅からの道のり。曲がり角。「ここを曲がったら見えます」的な構図</td>
+        <td>ハイライト「アクセス」用</td>
+      </tr>
+      <tr>
+        <td style="color:var(--gray-500);">あれば</td>
+        <td><b>家族の写真</b>（お子さん等）</td>
+        <td>許可があれば。家族経営の温かさが伝わる。投稿の「人感」が格段に上がる</td>
+        <td>投稿⑤⑨</td>
+      </tr>
+      <tr>
+        <td style="color:var(--gray-500);">あれば</td>
+        <td><b>コーヒー豆・器具</b></td>
+        <td>使う予定の豆の袋、ドリッパー、カップ等。「こだわり」を見せる小道具</td>
+        <td>投稿⑤⑦</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="background: #fff1f0; border: 2px solid var(--red); border-radius: 12px; padding: 20px; margin-top: 20px;">
+    <h4 style="color: var(--red); margin-bottom: 8px;">依頼時のメッセージ例</h4>
+    <p style="font-size:14px; color:var(--gray-700); line-height:1.8;">
+      「Instagram用の素材として、以下の写真・動画をスマホで撮っていただけますか？<br>
+      特別な機材は不要です。<b>昼間の自然光</b>で、<b>スマホ横向き</b>で撮ってもらえればOKです。<br><br>
+      <b>最優先3点:</b><br>
+      ① てっちゃん（店主）の笑顔の写真（カウンター前で）<br>
+      ② 居酒屋営業中の雰囲気写真（夜・お客さんの後ろ姿でOK）<br>
+      ③ コーヒーを淹れる手元の写真 or 15秒動画<br><br>
+      この3点があるだけで投稿の質が大幅に上がります。」
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- PART 1: 投稿テンプレート 5本                                    -->
+<!-- ============================================================ -->
+
+<div class="part-divider">
+  <h2>Part 1: 投稿テンプレート 5本</h2>
+  <p>見積項目「投稿用テンプレート制作 ×5」に対応</p>
+</div>
+
+<!-- テンプレ1: 初投稿・アカウント開設宣言 -->
+<div class="template-card">
+  <div class="header type-1">
+    <h3>テンプレート① 初投稿・アカウント開設宣言</h3>
+    <div class="sub">「カフェを始めます」の第一声。フォローの入口</div>
+  </div>
+  <div class="body">
+    <div class="info-row">
+      <div class="info-item"><div class="label">投稿形式</div><div class="value">フィード（複数枚）</div></div>
+      <div class="info-item"><div class="label">使用タイミング</div><div class="value">アカウント開設日</div></div>
+      <div class="info-item"><div class="label">使用写真</div><div class="value">外観（看板あり）2〜3枚</div></div>
+      <div class="info-item"><div class="label">CTA</div><div class="value">フォロー促進</div></div>
+    </div>
+
+    <div class="photo-note">
+      <strong>推奨写真</strong>
+      <p>1枚目: 看板「てっちゃん」がはっきり見える正面ショット（S__77692956_0 or S__77692972_0）<br>
+      2枚目: ストリングライトが映える外観（S__77692955_0）<br>
+      3枚目: カウンター完成写真（S__77692957_0）</p>
+    </div>
+
+    <div class="caption-box">
+      <h4>キャプションテンプレート</h4>
+      <pre>はじめまして。
+
+香椎で長年「おでんと焼いもの てっちゃん」を
+やっている店主です。
+
+このたび、同じ場所で
+カフェを始めることにしました。
+
+居酒屋をやりながら、昼間はカフェ。
+「夜はおでん、昼はコーヒー」
+そんなちょっと変わったお店です。
+
+今はまだ準備中ですが、
+5月のオープンに向けて
+少しずつ形になってきています。
+
+完成までの過程を
+このアカウントで発信していきます。
+
+フォローして見守ってもらえると
+嬉しいです。
+
+📍福岡・香椎｜橋口ビル1F</pre>
+    </div>
+
+    <div class="hashtag-box">
+      #香椎カフェ #福岡カフェ #新規オープン #カフェ準備中 #居酒屋がカフェ始めます
+    </div>
+
+    <div class="cta-box">
+      <strong>CTA設計</strong>
+      <p>「フォローして見守ってもらえると嬉しいです」→ フォロー促進。初投稿なので来店CTAは入れない。</p>
+    </div>
+  </div>
+</div>
+
+<!-- テンプレ2: 工事進捗・ビフォーアフター -->
+<div class="template-card">
+  <div class="header type-2">
+    <h3>テンプレート② 工事進捗・ビフォーアフター</h3>
+    <div class="sub">建設ストーリーで「応援したくなる」を作る</div>
+  </div>
+  <div class="body">
+    <div class="info-row">
+      <div class="info-item"><div class="label">投稿形式</div><div class="value">フィード or リール</div></div>
+      <div class="info-item"><div class="label">使用タイミング</div><div class="value">工事期間中 週2〜3回</div></div>
+      <div class="info-item"><div class="label">使用写真</div><div class="value">工事前後の比較写真</div></div>
+      <div class="info-item"><div class="label">CTA</div><div class="value">フォロー / 保存</div></div>
+    </div>
+
+    <div class="photo-note">
+      <strong>推奨写真</strong>
+      <p>ビフォー: 居酒屋時代の写真（あれば）or 改装前の状態<br>
+      アフター: カウンター完成（S__77692957_0）、棚設置（S__77692958_0）、ストリングライト（S__77692969_0）</p>
+    </div>
+
+    <div class="caption-box">
+      <h4>キャプションテンプレート</h4>
+      <pre>【カフェづくり日記 Day○】
+
+○○ができました。
+
+居酒屋のカウンターだった場所が
+カフェのカウンターに生まれ変わりました。
+
+木目の天板を選んだのは
+「手触りの温かさ」にこだわりたかったから。
+
+ここでコーヒーを淹れる日が
+待ち遠しいです。
+
+完成まであと○日。
+経過はこのアカウントで更新中。
+保存しておくと見返せます。
+
+📍福岡・香椎｜5月オープン予定</pre>
+    </div>
+
+    <div class="hashtag-box">
+      #カフェづくり #DIY #リノベーション #香椎カフェ #カフェ開業
+    </div>
+
+    <div class="cta-box">
+      <strong>CTA設計</strong>
+      <p>「保存しておくと見返せます」→ 保存促進。アルゴリズム評価が高い保存アクションを狙う。</p>
+    </div>
+  </div>
+</div>
+
+<!-- テンプレ3: こだわりポイント紹介 -->
+<div class="template-card">
+  <div class="header type-3">
+    <h3>テンプレート③ こだわりポイント紹介</h3>
+    <div class="sub">「なぜこの素材？なぜこのデザイン？」想いを語る</div>
+  </div>
+  <div class="body">
+    <div class="info-row">
+      <div class="info-item"><div class="label">投稿形式</div><div class="value">フィード（複数枚）</div></div>
+      <div class="info-item"><div class="label">使用タイミング</div><div class="value">週1回</div></div>
+      <div class="info-item"><div class="label">使用写真</div><div class="value">ディテールのアップ</div></div>
+      <div class="info-item"><div class="label">CTA</div><div class="value">共感→フォロー</div></div>
+    </div>
+
+    <div class="photo-note">
+      <strong>推奨写真</strong>
+      <p>カウンター天板のアップ（S__77692957_0）<br>
+      レンガタイルと木フロアの境界（S__77692960_0）<br>
+      看板のロゴ部分（S__77692956_0 をトリミング）</p>
+    </div>
+
+    <div class="caption-box">
+      <h4>キャプションテンプレート</h4>
+      <pre>こだわった場所、○○のこと。
+
+○○○○を選んだ理由は
+□□□□だから。
+
+居酒屋をやってきて思うのは
+「お客さんは細かいところを見ている」
+ということ。
+
+だからカフェでも
+手を抜きたくない場所がある。
+
+○○○○に触れたとき
+「あ、いいな」と思ってもらえたら嬉しい。
+
+応援してくれる方、
+フォローで見守ってもらえると励みになります。
+
+📍福岡・香椎｜5月オープン予定</pre>
+    </div>
+
+    <div class="hashtag-box">
+      #こだわりカフェ #香椎カフェ #カフェ内装 #福岡カフェ #店づくり
+    </div>
+
+    <div class="cta-box">
+      <strong>CTA設計</strong>
+      <p>「応援してくれる方、フォローで見守ってもらえると」→ 応援文脈でのフォロー促進。押し売り感がない。</p>
+    </div>
+  </div>
+</div>
+
+<!-- テンプレ4: カウントダウン -->
+<div class="template-card">
+  <div class="header type-4">
+    <h3>テンプレート④ カウントダウン</h3>
+    <div class="sub">オープン1〜2週間前から毎日投稿</div>
+  </div>
+  <div class="body">
+    <div class="info-row">
+      <div class="info-item"><div class="label">投稿形式</div><div class="value">ストーリーズ + フィード</div></div>
+      <div class="info-item"><div class="label">使用タイミング</div><div class="value">オープン14日前〜当日</div></div>
+      <div class="info-item"><div class="label">使用写真</div><div class="value">完成した内装・外観</div></div>
+      <div class="info-item"><div class="label">CTA</div><div class="value">カウントダウンスタンプ + Googleマップ</div></div>
+    </div>
+
+    <div class="photo-note">
+      <strong>推奨写真</strong>
+      <p>完成した内装のベストショット（S__77692971_0 明るい店内）<br>
+      カウンター全景（S__77692957_0）<br>
+      外観のベストショット（S__77692972_0 看板＋店内見える）</p>
+    </div>
+
+    <div class="caption-box">
+      <h4>キャプションテンプレート（フィード）</h4>
+      <pre>オープンまで、あと○日。
+
+ようやくここまで来ました。
+
+5月○日（○）○時、
+てっちゃんカフェ、オープンします。
+
+居酒屋「てっちゃん」と同じ場所で
+昼間だけのカフェを始めます。
+
+コーヒーと、手作りの○○○○。
+ふらっと立ち寄れるお店にしたいです。
+
+ストーリーズのカウントダウンに
+リマインド設定しておくと
+オープン当日に通知が届きます。
+
+📍福岡・香椎｜橋口ビル1F
+プロフィールのリンクからGoogleマップで場所を確認できます</pre>
+    </div>
+
+    <div class="caption-box">
+      <h4>ストーリーズテンプレート</h4>
+      <pre>【あと○日】
+
+てっちゃんカフェ
+5月○日 オープン
+
+→ カウントダウンスタンプ設置
+→ リンクステッカー: Googleマップ
+→ テキスト: 「リマインド設定してね」</pre>
+    </div>
+
+    <div class="hashtag-box">
+      #香椎カフェ #新規オープン #カウントダウン #5月オープン #福岡カフェ
+    </div>
+
+    <div class="cta-box">
+      <strong>CTA設計</strong>
+      <p>フィード: Googleマップ誘導。ストーリーズ: カウントダウンスタンプのリマインド設定。二段構えで来店を確保。</p>
+    </div>
+  </div>
+</div>
+
+<!-- テンプレ5: オープン当日 -->
+<div class="template-card">
+  <div class="header type-5">
+    <h3>テンプレート⑤ オープン当日</h3>
+    <div class="sub">全力で来店を促す。この日だけは全CTAを使う</div>
+  </div>
+  <div class="body">
+    <div class="info-row">
+      <div class="info-item"><div class="label">投稿形式</div><div class="value">フィード + ストーリーズ + リール</div></div>
+      <div class="info-item"><div class="label">使用タイミング</div><div class="value">オープン当日</div></div>
+      <div class="info-item"><div class="label">使用写真</div><div class="value">当日撮影（事前に構図を決めておく）</div></div>
+      <div class="info-item"><div class="label">CTA</div><div class="value">来店（全力）+ タグ付け依頼</div></div>
+    </div>
+
+    <div class="caption-box">
+      <h4>キャプションテンプレート（フィード）</h4>
+      <pre>本日、オープンしました。
+
+てっちゃんカフェ、始まります。
+
+○時〜○時、
+コーヒーと○○○○をご用意して
+お待ちしています。
+
+「おでんと焼いもの てっちゃん」が
+昼間だけカフェに変わりました。
+
+ぜひ一度、来てみてください。
+
+ご来店の際は
+#てっちゃんカフェ で投稿してもらえると
+とても嬉しいです。
+
+📍福岡・香椎｜橋口ビル1F
+📍Googleマップ → プロフィールのリンクから</pre>
+    </div>
+
+    <div class="caption-box">
+      <h4>ストーリーズテンプレート（当日は3〜5回更新）</h4>
+      <pre>【朝】開店準備の様子 → 「○時からオープンです」
+【昼】1杯目のコーヒーを淹れる瞬間 → リンクステッカー（Googleマップ）
+【午後】お客さんの様子（許可取得） → 「まだ席あります」
+【夕方】「本日はありがとうございました」→ 明日の営業情報</pre>
+    </div>
+
+    <div class="hashtag-box">
+      #てっちゃんカフェ #香椎カフェ #新規オープン #オープン初日 #福岡カフェ
+    </div>
+
+    <div class="cta-box">
+      <strong>CTA設計</strong>
+      <p>この日だけは例外的にCTAを複数使う: 来店（Googleマップ）+ タグ付け依頼（#てっちゃんカフェ）+ DM予約案内。フィード・ストーリーズ・リールの全チャネルで来店を促す。</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- PART 2: 投稿コンテンツ 10本                                     -->
+<!-- ============================================================ -->
+
+<div class="part-divider" style="background: linear-gradient(135deg, #c41d7f 0%, #eb2f96 100%);">
+  <h2>Part 2: 投稿コンテンツ 10本</h2>
+  <p>見積項目「投稿コンテンツ制作 ×10」に対応｜カフェ素材20枚から制作</p>
+</div>
+
+<div class="summary-box">
+  <h3>投稿スケジュール（30日ロードマップ連動）</h3>
+  <table class="map-table">
+    <thead>
+      <tr><th>#</th><th>投稿タイトル</th><th>タイミング</th><th>形式</th><th>テンプレ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>①</td><td>カフェ始めます宣言</td><td><span class="timing-badge badge-week1">Week 1 Day 1</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ①</td></tr>
+      <tr><td>②</td><td>この場所のこと</td><td><span class="timing-badge badge-week1">Week 1 Day 3</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ②</td></tr>
+      <tr><td>③</td><td>ビフォーアフター</td><td><span class="timing-badge badge-week1">Week 1 Day 5</span></td><td><span class="timing-badge badge-reel">リール</span></td><td>テンプレ②</td></tr>
+      <tr><td>④</td><td>カウンターができました</td><td><span class="timing-badge badge-week2">Week 2 Day 1</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ③</td></tr>
+      <tr><td>⑤</td><td>こだわりの棚と木の温もり</td><td><span class="timing-badge badge-week2">Week 2 Day 4</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ③</td></tr>
+      <tr><td>⑥</td><td>看板の歴史</td><td><span class="timing-badge badge-week3">Week 3 Day 2</span></td><td><span class="timing-badge badge-reel">リール</span></td><td>テンプレ②</td></tr>
+      <tr><td>⑦</td><td>ここでコーヒーを淹れます</td><td><span class="timing-badge badge-week3">Week 3 Day 5</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ③</td></tr>
+      <tr><td>⑧</td><td>夕暮れの電球</td><td><span class="timing-badge badge-week4">Week 4 Day 1</span></td><td><span class="timing-badge badge-reel">リール</span></td><td>テンプレ②</td></tr>
+      <tr><td>⑨</td><td>裏側を見せます</td><td><span class="timing-badge badge-week4">Week 4 Day 3</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ③</td></tr>
+      <tr><td>⑩</td><td>カウントダウン開始</td><td><span class="timing-badge badge-week4">Week 4 Day 5</span></td><td><span class="timing-badge badge-feed">フィード</span></td><td>テンプレ④</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- 投稿① -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #096dd9, #1890ff);">1</div>
+    <div><h3>カフェ始めます宣言</h3><div class="post-type"><span class="timing-badge badge-week1">Week 1 Day 1</span> <span class="timing-badge badge-feed">フィード（3枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（3枚構成）</strong>
+      <p>1枚目: S__77692956_0.jpg（看板正面「おでんと焼いもの てっちゃん」）<br>
+      2枚目: S__77692972_0.jpg（看板＋店内が見える全景）<br>
+      3枚目: S__77692957_0.jpg（新設カウンター）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>はじめまして。
+
+香椎で「おでんと焼いもの てっちゃん」を
+やっている店主です。
+
+このたび、同じ場所で
+昼間だけのカフェを始めることにしました。
+
+夜はおでん、昼はコーヒー。
+ちょっと変わった二毛作のお店です。
+
+今はまだ準備の真っ最中。
+カウンターができあがってきて
+少しずつカフェらしくなってきました。
+
+5月オープン予定。
+完成までの過程を発信していきます。
+
+フォローして
+見守ってもらえると嬉しいです。
+
+📍福岡・香椎｜橋口ビル1F
+
+#香椎カフェ #福岡カフェ #新規オープン #カフェ準備中 #居酒屋がカフェ始めます</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿② -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #389e0d, #52c41a);">2</div>
+    <div><h3>この場所のこと</h3><div class="post-type"><span class="timing-badge badge-week1">Week 1 Day 3</span> <span class="timing-badge badge-feed">フィード（2枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（2枚構成）</strong>
+      <p>1枚目: S__77692955_0.jpg（店舗正面・ガラス戸・ストリングライト）<br>
+      2枚目: S__77692969_0.jpg（ストリングライトのアップ）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>この場所のこと。
+
+香椎の橋口ビル1F。
+ここで何年も居酒屋をやってきました。
+
+この軒先の電球は、
+夜になると灯る、お店の目印。
+
+カフェになっても
+この電球はそのまま残します。
+
+昼間に灯すとまた雰囲気が違って
+いい感じなんです。
+
+居酒屋の空気を残しながら
+新しいお店を作っていく。
+
+その過程を、ここで。
+
+📍福岡・香椎｜橋口ビル1F
+
+#香椎カフェ #福岡カフェ #カフェづくり #ストリングライト #居酒屋カフェ</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿③ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #d48806, #faad14);">3</div>
+    <div><h3>ビフォーアフター</h3><div class="post-type"><span class="timing-badge badge-week1">Week 1 Day 5</span> <span class="timing-badge badge-reel">リール（15秒）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>リール構成（写真をスライドショーで）</strong>
+      <p>カット1（3秒）: S__77692956_0.jpg 看板「てっちゃん」→ テキスト「居酒屋だったこの場所が…」<br>
+      カット2（3秒）: S__77692960_0.jpg レンガタイル＋木フロア → テキスト「少しずつ変わっていきます」<br>
+      カット3（3秒）: S__77692961_0.jpg 入口の段差 → テキスト「入口も整えて」<br>
+      カット4（3秒）: S__77692957_0.jpg 木目カウンター → テキスト「カフェのカウンターができました」<br>
+      カット5（3秒）: S__77692972_0.jpg 全景 → テキスト「5月オープン」<br>
+      BGM: ジャズ系 or アコースティック系トレンド音源</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>居酒屋が、昼間だけカフェになります。
+
+夜は変わらず「おでんと焼いもの てっちゃん」。
+昼間は新しいカフェとして。
+
+同じ場所、ふたつの顔。
+
+5月オープン。
+プロフィールから他の投稿も見てみてください。
+
+📍福岡・香椎
+
+#香椎カフェ #ビフォーアフター #リノベーション #福岡カフェ #新規オープン</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿④ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #722ed1, #9254de);">4</div>
+    <div><h3>カウンターができました</h3><div class="post-type"><span class="timing-badge badge-week2">Week 2 Day 1</span> <span class="timing-badge badge-feed">フィード（2枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（2枚構成）</strong>
+      <p>1枚目: S__77692957_0.jpg（カウンター正面・ガラス天板×木目）<br>
+      2枚目: S__77692971_0.jpg（開口部から見える内装・明るい店内）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>カウンターができました。
+
+天板はガラス、腰壁は木。
+「温かいけど清潔感がある」
+そんなバランスを目指しました。
+
+ここに座って
+コーヒーを飲んでもらう日が
+早く来てほしい。
+
+保存しておくと
+完成したときに見返せます。
+
+📍福岡・香椎｜5月オープン予定
+
+#香椎カフェ #カフェカウンター #カフェ内装 #福岡カフェ #カフェづくり</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑤ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #cf1322, #f5222d);">5</div>
+    <div><h3>こだわりの棚と木の温もり</h3><div class="post-type"><span class="timing-badge badge-week2">Week 2 Day 4</span> <span class="timing-badge badge-feed">フィード（2枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（2枚構成）</strong>
+      <p>1枚目: S__77692958_0.jpg（壁面の木製棚）<br>
+      2枚目: S__77692957_0.jpg（カウンターの木目アップ）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>壁に棚をつけました。
+
+ここにコーヒー豆を並べるか、
+カップを飾るか、
+まだ決めていません。
+
+何を置こうか考える時間が
+いちばん楽しい。
+
+「こんなの置いたらいいよ」
+っていうアイデアがあれば
+コメントで教えてください。
+
+📍福岡・香椎｜5月オープン予定
+
+#香椎カフェ #カフェインテリア #壁面棚 #福岡カフェ #店づくり</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑥ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #096dd9, #1890ff);">6</div>
+    <div><h3>看板の歴史</h3><div class="post-type"><span class="timing-badge badge-week3">Week 3 Day 2</span> <span class="timing-badge badge-reel">リール（15秒）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>リール構成</strong>
+      <p>カット1（4秒）: S__77692974_0.jpg 看板全体（遠景）→ テキスト「この看板を見たことありますか？」<br>
+      カット2（4秒）: S__77692956_0.jpg 看板アップ → テキスト「おでんと焼いもの てっちゃん」<br>
+      カット3（4秒）: S__77692972_0.jpg 店内が見える全景 → テキスト「ここが昼間、カフェになります」<br>
+      カット4（3秒）: テキストのみ 白背景 → 「5月オープン｜香椎」<br>
+      BGM: トレンド音源（少しエモーショナル系）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>「おでんと焼いもの てっちゃん」
+
+この看板をご存知の方、
+いらっしゃいますか？
+
+香椎で長年やってきた居酒屋です。
+
+この場所で、
+昼間だけのカフェを始めます。
+
+看板はそのまま。
+夜は変わらず、おでんと焼いも。
+昼は新しく、コーヒーと○○。
+
+知ってる方も、初めての方も、
+ぜひ遊びに来てください。
+
+📍福岡・香椎｜5月オープン
+
+#香椎 #福岡カフェ #居酒屋カフェ #新規オープン #てっちゃん</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑦ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #389e0d, #52c41a);">7</div>
+    <div><h3>ここでコーヒーを淹れます</h3><div class="post-type"><span class="timing-badge badge-week3">Week 3 Day 5</span> <span class="timing-badge badge-feed">フィード（2枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（2枚構成）</strong>
+      <p>1枚目: S__77692971_0.jpg（明るい店内・開口部から光が入る）<br>
+      2枚目: S__77692964_0.jpg（カウンター越しに見える通路）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>ここでコーヒーを淹れます。
+
+朝の光が入るこの場所で
+一杯ずつ丁寧に。
+
+居酒屋のときとは違う
+穏やかな空気が流れています。
+
+同じ場所なのに、不思議。
+
+オープンまで、もう少し。
+
+📍福岡・香椎｜橋口ビル1F
+
+#香椎カフェ #コーヒー #カフェの光 #福岡カフェ #5月オープン</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑧ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #d48806, #faad14);">8</div>
+    <div><h3>夕暮れの電球</h3><div class="post-type"><span class="timing-badge badge-week4">Week 4 Day 1</span> <span class="timing-badge badge-reel">リール（15秒）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>リール構成（世界観型）</strong>
+      <p>カット1（4秒）: S__77692968_0.jpg 外壁・通りの雰囲気 → BGMイン<br>
+      カット2（4秒）: S__77692969_0.jpg ストリングライトのアップ → テキスト不要（映像で語る）<br>
+      カット3（4秒）: S__77692967_0.jpg 窓ガラス内側の光 → テキスト不要<br>
+      カット4（3秒）: テキストオーバーレイ「5月、ここでお待ちしています」<br>
+      BGM: ジャズ or Lo-Fi系</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>夕方の光が好きです。
+
+電球が灯り始める時間。
+居酒屋の顔になる直前の、
+この静かな瞬間。
+
+カフェの営業が終わって
+居酒屋に切り替わるこの時間も
+きっと好きになると思う。
+
+保存しておいて、
+ぜひ遊びに来てください。
+
+📍福岡・香椎
+
+#香椎カフェ #カフェの雰囲気 #夕暮れ #ストリングライト #福岡カフェ</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑨ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #722ed1, #9254de);">9</div>
+    <div><h3>裏側を見せます</h3><div class="post-type"><span class="timing-badge badge-week4">Week 4 Day 3</span> <span class="timing-badge badge-feed">フィード（3枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（3枚構成）</strong>
+      <p>1枚目: S__77692959_0.jpg（換気扇）<br>
+      2枚目: S__77692962_0.jpg（雨の日のレンガ外構）<br>
+      3枚目: S__77692963_0.jpg（入口から外を見た景色）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>カフェの裏側。
+
+映えない写真も載せます。
+
+換気扇の位置を変えたり、
+雨の日に水はけを確認したり、
+地味だけど大事な作業の連続。
+
+お客さんには見えない部分だけど
+こういう一つひとつが
+「居心地のいいお店」を作ると思っています。
+
+あと少しで完成。
+もうひと踏ん張り。
+
+📍福岡・香椎｜5月オープン予定
+
+#カフェの裏側 #香椎カフェ #開業準備 #福岡カフェ #裏方の仕事</pre>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿⑩ -->
+<div class="post-card">
+  <div class="post-header">
+    <div class="post-num" style="background: linear-gradient(135deg, #cf1322, #f5222d);">10</div>
+    <div><h3>カウントダウン開始</h3><div class="post-type"><span class="timing-badge badge-week4">Week 4 Day 5</span> <span class="timing-badge badge-feed">フィード（3枚）</span></div></div>
+  </div>
+  <div class="post-body">
+    <div class="photo-note">
+      <strong>使用写真（3枚構成）</strong>
+      <p>1枚目: S__77692973_0.jpg（全景ワイドショット・ベストの1枚）<br>
+      2枚目: S__77692953_0.jpg（橋口ビル入口・場所が分かる）<br>
+      3枚目: S__77692970_0.jpg（ビル入口の別角度・アクセス参考）</p>
+    </div>
+    <div class="caption-box">
+      <h4>キャプション</h4>
+      <pre>オープンまで、あと○日。
+
+てっちゃんカフェ
+5月○日（○）オープンします。
+
+📍福岡・香椎｜橋口ビル1F
+🕐 ○時〜○時（昼間のみ営業）
+
+☕ こだわりのコーヒー
+🍰 手作りの○○○○
+📦 テイクアウトOK
+
+場所はプロフィールのリンクから
+Googleマップで確認できます。
+
+ストーリーズのカウントダウンに
+リマインド設定しておくと
+オープン当日に通知が届きます。
+
+ぜひ、来てください。
+
+#香椎カフェ #福岡カフェ #新規オープン #5月オープン #カウントダウン</pre>
+    </div>
+  </div>
+</div>
+
+
+<!-- ====== 全体まとめ ====== -->
+<div class="summary-box" style="border-color: var(--primary);">
+  <h3 style="color: var(--primary);">まとめ</h3>
+  <p style="font-size:14px; color:var(--gray-700); line-height:1.8;">
+    <b>テンプレート5本:</b> ① 開設宣言 / ② 工事進捗 / ③ こだわり紹介 / ④ カウントダウン / ⑤ オープン当日<br>
+    <b>投稿コンテンツ10本:</b> Week1〜4のスケジュールに沿って、カフェ素材20枚から厳選して制作<br>
+    <b>投稿形式:</b> フィード7本 + リール3本<br>
+    <b>CTA:</b> 全投稿にCTAを設置（フォロー→保存→Googleマップ→来店の段階的設計）<br><br>
+    <b>補足:</b><br>
+    ・メニューが決まったら「メニュー紹介投稿」をテンプレ①〜⑤の間に追加<br>
+    ・オープン後は、index.html（投稿テンプレート6種）のパターン1〜6をローテーション運用<br>
+    ・上記10本以外にも、ストーリーズは<b>毎日更新</b>が理想（工事の様子、仕込み、日常の切り取りを気軽に）
+  </p>
+</div>
+
+</div>
+
+<footer class="footer">
+  てっちゃんカフェ 投稿プラン &copy; 2026｜株式会社斗
+</footer>
+
+</body>
+</html>

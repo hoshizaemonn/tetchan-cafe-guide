@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>てっちゃんカフェ｜運用代行・分析レポート 3本セット</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+  :root {
+    --primary: #8B4513; --primary-light: #A0522D; --primary-bg: #FFF8DC;
+    --dark: #1a1a1a; --gray-900: #262626; --gray-700: #595959; --gray-500: #8c8c8c;
+    --gray-300: #d9d9d9; --gray-100: #f5f5f5; --white: #ffffff;
+    --green: #389e0d; --green-bg: #f6ffed; --blue: #096dd9; --blue-bg: #e6f7ff;
+    --gold: #d48806; --gold-bg: #fffbe6; --purple: #722ed1; --purple-bg: #f9f0ff;
+    --red: #cf1322; --red-bg: #fff1f0; --pink: #eb2f96; --pink-bg: #fff0f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #fafafa; color: var(--dark); line-height: 1.8; }
+  .hero { background: linear-gradient(135deg, #4A2C2A 0%, #6F4E37 50%, #8B4513 100%); color: var(--white); padding: 60px 40px; text-align: center; }
+  .hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
+  .hero p { font-size: 16px; opacity: 0.9; }
+  .hero .meta { font-size: 13px; opacity: 0.6; margin-top: 16px; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+  .part-divider { color: var(--white); padding: 32px 40px; text-align: center; margin: 60px 0 40px; border-radius: 16px; }
+  .part-divider h2 { font-size: 26px; font-weight: 900; margin-bottom: 8px; }
+  .part-divider p { font-size: 14px; opacity: 0.9; }
+  .section { margin-bottom: 48px; }
+  .section-title { font-size: 22px; font-weight: 900; margin-bottom: 20px; padding-left: 16px; border-left: 6px solid var(--primary); }
+  .report-box { background: var(--white); border-radius: 16px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 32px; border: 2px solid var(--gray-300); }
+  .report-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+  .kpi-card { background: var(--gray-100); border-radius: 12px; padding: 16px; text-align: center; }
+  .kpi-card .label { font-size: 11px; color: var(--gray-500); font-weight: 600; }
+  .kpi-card .value { font-size: 24px; font-weight: 900; margin-top: 4px; }
+  .kpi-card .note { font-size: 11px; color: var(--gray-500); margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  thead { background: var(--gray-900); color: var(--white); }
+  th { padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--gray-300); }
+  tr:hover { background: var(--gray-100); }
+  .insight-box { border-radius: 12px; padding: 20px 24px; margin: 16px 0; }
+  .insight-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .insight-box p, .insight-box ul { font-size: 13px; color: var(--gray-700); line-height: 1.8; }
+  .insight-box ul { padding-left: 20px; }
+  .insight-green { background: var(--green-bg); border-left: 4px solid var(--green); }
+  .insight-green h4 { color: var(--green); }
+  .insight-blue { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+  .insight-blue h4 { color: var(--blue); }
+  .insight-gold { background: var(--gold-bg); border-left: 4px solid var(--gold); }
+  .insight-gold h4 { color: var(--gold); }
+  .insight-red { background: var(--red-bg); border-left: 4px solid var(--red); }
+  .insight-red h4 { color: var(--red); }
+  .insight-pink { background: var(--pink-bg); border-left: 4px solid var(--pink); }
+  .insight-pink h4 { color: var(--pink); }
+  .action-box { background: linear-gradient(135deg, #f0faf5, #e8f5ee); border: 2px solid var(--green); border-radius: 12px; padding: 24px; margin: 24px 0; }
+  .action-box h3 { color: var(--green); font-size: 16px; margin-bottom: 12px; }
+  .footer { text-align: center; padding: 40px; font-size: 12px; color: var(--gray-500); }
+  @media (max-width: 768px) { .hero h1 { font-size: 24px; } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>てっちゃんカフェ 運用代行・分析レポート</h1>
+  <p>初月・中間・最終 ― 3段階レポート</p>
+  <div class="meta">見積項目「運用代行・分析レポート ×3」に対応｜各レポートの構成とKPI計測フォーマット</div>
+</div>
+
+<div class="container">
+
+<!-- ====== レポート全体構成 ====== -->
+<section class="section">
+  <h2 class="section-title">レポート全体設計</h2>
+
+  <div class="report-box">
+    <h3>3本のレポートの位置づけ</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>レポート名</th><th>対象期間</th><th>主な内容</th><th>提出タイミング</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:900; color:var(--blue);">1</td>
+          <td><b>初月レポート</b><br>アカウント立ち上げ報告</td>
+          <td>アカウント開設〜<br>オープン前日</td>
+          <td>アカウント設計の実施内容 / 初期投稿の反応 / フォロワー獲得状況 / オープンに向けた準備状況</td>
+          <td>オープン直前</td>
+        </tr>
+        <tr>
+          <td style="font-weight:900; color:var(--green);">2</td>
+          <td><b>中間レポート</b><br>投稿分析・改善提案</td>
+          <td>オープン〜<br>1ヶ月後</td>
+          <td>投稿パフォーマンス分析 / エンゲージメント分析 / フォロワー増減 / 来店への転換率 / 改善提案</td>
+          <td>オープン1ヶ月後</td>
+        </tr>
+        <tr>
+          <td style="font-weight:900; color:var(--gold);">3</td>
+          <td><b>最終レポート</b><br>成果報告・今後の提案</td>
+          <td>オープン〜<br>3ヶ月後</td>
+          <td>KPI達成状況の総括 / 投稿パターン別効果比較 / ROI分析 / 今後の自走に向けた提案</td>
+          <td>契約期間終了時</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-box">
+    <h3>共通KPI（全レポートで計測）</h3>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="label">フォロワー数</div>
+        <div class="value" style="color:var(--blue);">―</div>
+        <div class="note">純増数も記録</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">投稿数</div>
+        <div class="value" style="color:var(--green);">―</div>
+        <div class="note">フィード / リール / ストーリーズ別</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">リーチ数</div>
+        <div class="value" style="color:var(--gold);">―</div>
+        <div class="note">フォロワー外リーチ率</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">エンゲージメント率</div>
+        <div class="value" style="color:var(--purple);">―</div>
+        <div class="note">いいね+保存+コメント / リーチ</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">保存数</div>
+        <div class="value" style="color:var(--pink);">―</div>
+        <div class="note">最重要指標</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">プロフィール訪問数</div>
+        <div class="value" style="color:var(--red);">―</div>
+        <div class="note">→ フォロー転換率</div>
+      </div>
+    </div>
+    <div class="insight-blue">
+      <h4>KPI計測方法</h4>
+      <p>Instagramビジネスアカウントの「インサイト」機能から取得。週次でスクリーンショットを保存しておくと、レポート作成時にデータが揃います。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- レポート1: 初月レポート                                         -->
+<!-- ============================================================ -->
+
+<div class="part-divider" style="background: linear-gradient(135deg, #096dd9, #1890ff);">
+  <h2>レポート1: 初月レポート</h2>
+  <p>アカウント立ち上げ報告｜対象期間: アカウント開設〜オープン前日</p>
+</div>
+
+<section class="section">
+  <div class="report-box" style="border-color: var(--blue);">
+    <h3 style="color: var(--blue);">1-1. 実施内容サマリー</h3>
+    <table>
+      <thead>
+        <tr><th>実施項目</th><th>内容</th><th>完了状況</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>アカウント開設</b></td>
+          <td>Instagramビジネスアカウント作成 / ユーザーネーム設定 / ビジネスカテゴリ設定</td>
+          <td style="color:var(--green); font-weight:700;">完了</td>
+        </tr>
+        <tr>
+          <td><b>プロフィール設計</b></td>
+          <td>プロフィール文面作成 / アイコン設定 / リンク（Googleマップ）設置</td>
+          <td style="color:var(--green); font-weight:700;">完了</td>
+        </tr>
+        <tr>
+          <td><b>ハイライト構築</b></td>
+          <td>メニュー / アクセス / 店内の様子 / お客様の声 / ストーリー の5カテゴリ</td>
+          <td>○○/5 完了</td>
+        </tr>
+        <tr>
+          <td><b>投稿テンプレート制作</b></td>
+          <td>① 開設宣言 / ② 工事進捗 / ③ こだわり紹介 / ④ カウントダウン / ⑤ オープン当日</td>
+          <td style="color:var(--green); font-weight:700;">5/5 完了</td>
+        </tr>
+        <tr>
+          <td><b>投稿コンテンツ制作</b></td>
+          <td>カフェ素材20枚＋追加素材から10本のコンテンツを制作・投稿</td>
+          <td>○○/10 投稿済</td>
+        </tr>
+        <tr>
+          <td><b>Googleビジネスプロフィール</b></td>
+          <td>店舗情報登録 / 写真追加 / Instagram連携</td>
+          <td>―</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-box" style="border-color: var(--blue);">
+    <h3 style="color: var(--blue);">1-2. フォロワー獲得状況</h3>
+    <div class="kpi-grid">
+      <div class="kpi-card" style="border: 2px solid var(--blue);">
+        <div class="label">現在のフォロワー数</div>
+        <div class="value" style="color:var(--blue);">○○○人</div>
+        <div class="note">目標: 100〜200人</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">フォロワーの内訳</div>
+        <div class="value" style="color:var(--green); font-size:16px;">居酒屋客 ○○%<br>オーガニック ○○%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">投稿数</div>
+        <div class="value" style="color:var(--gold);">○○本</div>
+        <div class="note">フィード○ / リール○ / ストーリーズ○</div>
+      </div>
+    </div>
+
+    <div class="insight-green">
+      <h4>フォロワー獲得の分析</h4>
+      <ul>
+        <li><b>居酒屋からの直接案内:</b> ○○人（全体の○○%）― QRコード設置・店主の声かけによる獲得</li>
+        <li><b>オーガニック流入:</b> ○○人 ― リール・ハッシュタグ経由での自然流入</li>
+        <li><b>相互フォロー:</b> ○○人 ― 香椎エリアのアカウントとの交流から</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="report-box" style="border-color: var(--blue);">
+    <h3 style="color: var(--blue);">1-3. 投稿パフォーマンス</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>投稿タイトル</th><th>形式</th><th>リーチ</th><th>いいね</th><th>保存</th><th>コメント</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>カフェ始めます宣言</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>2</td><td>この場所のこと</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>3</td><td>ビフォーアフター</td><td>リール</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>4</td><td>カウンターができました</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>5</td><td>こだわりの棚と木の温もり</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>6</td><td>看板の歴史</td><td>リール</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>7</td><td>ここでコーヒーを淹れます</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>8</td><td>夕暮れの電球</td><td>リール</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>9</td><td>裏側を見せます</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>10</td><td>カウントダウン開始</td><td>フィード</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-gold">
+      <h4>反応が良かった投稿 TOP3</h4>
+      <ul>
+        <li><b>1位:</b> ○○○○ ― 理由: ○○○○</li>
+        <li><b>2位:</b> ○○○○ ― 理由: ○○○○</li>
+        <li><b>3位:</b> ○○○○ ― 理由: ○○○○</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-box">
+    <h3>1-4. オープンに向けた準備状況と推奨アクション</h3>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>状況</th><th>オープンまでにやること</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>カウントダウン投稿</b></td>
+          <td>―</td>
+          <td>オープン日までストーリーズで毎日更新。カウントダウンスタンプのリマインド設定を促す</td>
+        </tr>
+        <tr>
+          <td><b>Googleマップ連携</b></td>
+          <td>―</td>
+          <td>Googleビジネスプロフィールの情報完備。営業時間を正確に設定</td>
+        </tr>
+        <tr>
+          <td><b>オープン当日の投稿準備</b></td>
+          <td>―</td>
+          <td>テンプレート⑤に沿って、フィード・ストーリーズ・リールの3チャネルで投稿する準備</td>
+        </tr>
+        <tr>
+          <td><b>DM対応体制</b></td>
+          <td>―</td>
+          <td>ウェルカムメッセージ（よくある質問）を設定。予約DMへの返信テンプレートを準備</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- レポート2: 中間レポート                                         -->
+<!-- ============================================================ -->
+
+<div class="part-divider" style="background: linear-gradient(135deg, #389e0d, #52c41a);">
+  <h2>レポート2: 中間レポート</h2>
+  <p>投稿分析・改善提案｜対象期間: オープン〜1ヶ月後</p>
+</div>
+
+<section class="section">
+  <div class="report-box" style="border-color: var(--green);">
+    <h3 style="color: var(--green);">2-1. KPIサマリー</h3>
+    <div class="kpi-grid">
+      <div class="kpi-card" style="border: 2px solid var(--green);">
+        <div class="label">フォロワー数</div>
+        <div class="value" style="color:var(--green);">○○○人</div>
+        <div class="note">前月比 +○○○人</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">月間リーチ</div>
+        <div class="value" style="color:var(--blue);">○,○○○</div>
+        <div class="note">フォロワー外 ○○%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">エンゲージメント率</div>
+        <div class="value" style="color:var(--purple);">○.○%</div>
+        <div class="note">業界平均: 3〜6%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">プロフ訪問数</div>
+        <div class="value" style="color:var(--gold);">○○○</div>
+        <div class="note">→フォロー転換率 ○○%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">リンククリック</div>
+        <div class="value" style="color:var(--red);">○○</div>
+        <div class="note">Googleマップ遷移</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">DM予約数</div>
+        <div class="value" style="color:var(--pink);">○○件</div>
+        <div class="note">Instagram経由</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="report-box" style="border-color: var(--green);">
+    <h3 style="color: var(--green);">2-2. 投稿パフォーマンス分析</h3>
+
+    <h4 style="font-size:15px; margin:16px 0 12px;">投稿パターン別の平均パフォーマンス</h4>
+    <table>
+      <thead>
+        <tr><th>パターン</th><th>投稿数</th><th>平均リーチ</th><th>平均いいね</th><th>平均保存</th><th>平均コメント</th><th>評価</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-weight:700; color:#096dd9;">今日のおすすめ型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:700; color:#389e0d;">リール動画型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:700; color:#d48806;">人・裏側型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:700; color:#722ed1;">口コミ型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:700; color:#cf1322;">限定・今だけ型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr style="background: var(--pink-bg);"><td style="font-weight:700; color:var(--pink);">世界観型</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-green">
+      <h4>分析結果</h4>
+      <ul>
+        <li><b>最もリーチが多いパターン:</b> ○○型 ― 理由: ○○○○</li>
+        <li><b>最も保存が多いパターン:</b> ○○型 ― 理由: ○○○○</li>
+        <li><b>最もコメントが多いパターン:</b> ○○型 ― 理由: ○○○○</li>
+        <li><b>改善が必要なパターン:</b> ○○型 ― 課題: ○○○○</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="report-box" style="border-color: var(--green);">
+    <h3 style="color: var(--green);">2-3. フォロワー分析</h3>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>データ</th><th>考察</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>性別比</b></td><td>女性 ○○% / 男性 ○○%</td><td>ターゲットとの一致度: ○</td></tr>
+        <tr><td><b>年齢層</b></td><td>最多: ○○〜○○歳（○○%）</td><td>想定ターゲットとの一致度: ○</td></tr>
+        <tr><td><b>地域</b></td><td>福岡市 ○○% / 東区 ○○%</td><td>来店可能エリア比率: ○○%</td></tr>
+        <tr><td><b>アクティブ時間帯</b></td><td>最多: ○時〜○時</td><td>投稿時間の最適化に反映</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-box" style="border-color: var(--green);">
+    <h3 style="color: var(--green);">2-4. 来店導線の効果測定</h3>
+    <table>
+      <thead>
+        <tr><th>導線ステップ</th><th>数値</th><th>転換率</th><th>評価</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>リーチ → プロフ訪問</td><td>○,○○○ → ○○○</td><td>○○%</td><td>―</td></tr>
+        <tr><td>プロフ訪問 → フォロー</td><td>○○○ → ○○○</td><td>○○%</td><td>―</td></tr>
+        <tr><td>プロフ訪問 → リンククリック</td><td>○○○ → ○○</td><td>○○%</td><td>―</td></tr>
+        <tr><td>リンククリック → 来店（推定）</td><td>○○ → ○○</td><td>○○%</td><td>―</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-pink">
+      <h4>CTA効果の分析</h4>
+      <ul>
+        <li>Googleマップリンクのクリック数: ○○回/月</li>
+        <li>DM経由の予約・問い合わせ: ○○件/月</li>
+        <li>「インスタ見て来ました」のお客様: ○○人（店頭ヒアリング）</li>
+        <li>ハッシュタグ #てっちゃんカフェ の投稿数: ○○件（UGC）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-box">
+    <h3>2-5. 改善提案</h3>
+    <table>
+      <thead>
+        <tr><th>優先度</th><th>改善ポイント</th><th>具体的なアクション</th><th>期待効果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:900; color:var(--red);">高</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+        </tr>
+        <tr>
+          <td style="font-weight:900; color:var(--gold);">中</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700; color:var(--blue);">低</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+          <td>○○○○</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- レポート3: 最終レポート                                         -->
+<!-- ============================================================ -->
+
+<div class="part-divider" style="background: linear-gradient(135deg, #d48806, #faad14);">
+  <h2>レポート3: 最終レポート</h2>
+  <p>成果報告・今後の提案｜対象期間: オープン〜3ヶ月後</p>
+</div>
+
+<section class="section">
+  <div class="report-box" style="border-color: var(--gold);">
+    <h3 style="color: var(--gold);">3-1. KPI達成状況の総括</h3>
+    <table>
+      <thead>
+        <tr><th>KPI</th><th>目標値</th><th>実績値</th><th>達成率</th><th>評価</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>フォロワー数</b></td>
+          <td>1,000人</td>
+          <td>○○○人</td>
+          <td>○○%</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><b>月間平均リーチ</b></td>
+          <td>―</td>
+          <td>○,○○○</td>
+          <td>―</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><b>エンゲージメント率</b></td>
+          <td>3%以上</td>
+          <td>○.○%</td>
+          <td>―</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><b>Googleマップクリック累計</b></td>
+          <td>―</td>
+          <td>○○○回</td>
+          <td>―</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><b>DM予約・問い合わせ累計</b></td>
+          <td>―</td>
+          <td>○○件</td>
+          <td>―</td>
+          <td>―</td>
+        </tr>
+        <tr>
+          <td><b>UGC投稿数（#てっちゃんカフェ）</b></td>
+          <td>―</td>
+          <td>○○件</td>
+          <td>―</td>
+          <td>―</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-box" style="border-color: var(--gold);">
+    <h3 style="color: var(--gold);">3-2. 3ヶ月の推移</h3>
+    <table>
+      <thead>
+        <tr><th>指標</th><th>1ヶ月目</th><th>2ヶ月目</th><th>3ヶ月目</th><th>トレンド</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>フォロワー数</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td><b>月間リーチ</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td><b>エンゲージメント率</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td><b>保存数/月</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td><b>リンククリック/月</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td><b>DM問い合わせ/月</b></td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-box" style="border-color: var(--gold);">
+    <h3 style="color: var(--gold);">3-3. 投稿パターン別 効果ランキング</h3>
+    <table>
+      <thead>
+        <tr><th>順位</th><th>パターン</th><th>平均リーチ</th><th>平均保存率</th><th>来店貢献度</th><th>コメント</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-weight:900;">1</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:900;">2</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td style="font-weight:900;">3</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>4</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>5</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+        <tr><td>6</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-gold">
+      <h4>投稿戦略の結論</h4>
+      <ul>
+        <li><b>継続すべきパターン:</b> ○○型 ― 理由: ○○○○</li>
+        <li><b>強化すべきパターン:</b> ○○型 ― 理由: ○○○○</li>
+        <li><b>縮小してよいパターン:</b> ○○型 ― 理由: ○○○○</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="report-box" style="border-color: var(--gold);">
+    <h3 style="color: var(--gold);">3-4. 成功事例ピックアップ</h3>
+    <div class="insight-green">
+      <h4>最もパフォーマンスが高かった投稿</h4>
+      <p>
+        <b>投稿タイトル:</b> ○○○○<br>
+        <b>リーチ:</b> ○,○○○ / <b>いいね:</b> ○○○ / <b>保存:</b> ○○ / <b>コメント:</b> ○○<br>
+        <b>成功要因:</b> ○○○○<br>
+        <b>再現のポイント:</b> ○○○○
+      </p>
+    </div>
+  </div>
+
+  <div class="report-box" style="border-color: var(--gold);">
+    <h3 style="color: var(--gold);">3-5. 今後の自走に向けた提案</h3>
+
+    <div class="insight-blue">
+      <h4>運用代行終了後のセルフ運用ガイド</h4>
+      <ul>
+        <li><b>毎日やること:</b> ストーリーズ1〜2本（今日のおすすめ / 限定情報）</li>
+        <li><b>週3回やること:</b> フィード投稿（おすすめ型 / 人・裏側型 / リール）</li>
+        <li><b>月2回やること:</b> 世界観リール（渾身の1本を作り込む）</li>
+        <li><b>月1回やること:</b> インサイトの確認 → 投稿パターンの調整</li>
+      </ul>
+    </div>
+
+    <div class="insight-gold">
+      <h4>次のステップ（オプション提案）</h4>
+      <ul>
+        <li><b>Meta広告の導入:</b> 月5万円〜で来店エリアの潜在客にリーチ拡大</li>
+        <li><b>LINE公式アカウント連携:</b> リピーター育成・クーポン配信でLTV向上</li>
+        <li><b>Googleマップの口コミ強化:</b> 来店客に口コミ投稿を依頼する仕組みづくり</li>
+        <li><b>季節メニューの投稿カレンダー:</b> 3ヶ月先の投稿を事前に計画</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="action-box" style="border-color: var(--gold); background: linear-gradient(135deg, #fffbe6, #fff8dc);">
+    <h3 style="color: var(--gold);">まとめ</h3>
+    <p style="font-size:14px; color:var(--gray-700); line-height:1.8;">
+      <b>3ヶ月間の運用代行で得られた成果:</b><br>
+      ・フォロワー: 0人 → ○○○人<br>
+      ・Instagram経由の来店: 推定 ○○人/月<br>
+      ・アカウントの基盤: 投稿テンプレート・ハイライト・CTA導線がすべて構築済み<br><br>
+      <b>今後の運用は、このレポートの「セルフ運用ガイド」に沿って継続してください。</b><br>
+      投稿テンプレート・キャプション雛形・ハッシュタグはすべて納品済みです。<br>
+      追加のサポートが必要な場合はお気軽にご連絡ください。
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  てっちゃんカフェ 運用代行・分析レポート &copy; 2026｜株式会社斗
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>てっちゃんカフェ｜SNS構築・運用代行 納品物一覧</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+  :root {
+    --primary: #8B4513; --primary-light: #A0522D; --dark: #1a1a1a;
+    --gray-700: #595959; --gray-500: #8c8c8c; --gray-300: #d9d9d9;
+    --gray-100: #f5f5f5; --white: #fff;
+    --green: #389e0d; --green-bg: #f6ffed;
+    --blue: #096dd9; --blue-bg: #e6f7ff;
+    --gold: #d48806; --gold-bg: #fffbe6;
+    --purple: #722ed1; --purple-bg: #f9f0ff;
+    --pink: #c41d7f; --pink-bg: #fff0f6;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Noto Sans JP',sans-serif; background:#fafafa; color:var(--dark); line-height:1.8; }
+
+  .hero {
+    background: linear-gradient(135deg, #4A2C2A 0%, #6F4E37 50%, #8B4513 100%);
+    color: var(--white); padding: 60px 40px; text-align: center;
+  }
+  .hero h1 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+  .hero p { font-size: 15px; opacity: 0.9; }
+  .hero .meta { font-size: 13px; opacity: 0.6; margin-top: 16px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+  .summary-box {
+    background: var(--white); border-radius: 16px; padding: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 32px;
+    border: 2px solid var(--gray-300);
+  }
+  .summary-box h2 {
+    font-size: 20px; font-weight: 900; margin-bottom: 16px;
+    padding-left: 14px; border-left: 5px solid var(--primary);
+  }
+
+  .estimate-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .estimate-table thead { background: var(--dark); color: var(--white); }
+  .estimate-table th { padding: 12px 16px; text-align: left; font-weight: 600; }
+  .estimate-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-300); }
+  .estimate-table tr:hover { background: var(--gray-100); }
+  .estimate-table .total { background: var(--primary); color: var(--white); font-weight: 900; }
+
+  .check { color: var(--green); font-weight: 900; font-size: 18px; }
+
+  .deliverable-card {
+    background: var(--white); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 24px;
+    border: 2px solid var(--gray-300); transition: all 0.2s;
+  }
+  .deliverable-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .deliverable-card .card-header {
+    padding: 20px 24px; color: var(--white);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .card-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.2); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 900; flex-shrink: 0;
+  }
+  .card-header h3 { font-size: 18px; font-weight: 900; }
+  .card-header .sub { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+  .card-body { padding: 24px; }
+  .card-body p { font-size: 14px; color: var(--gray-700); margin-bottom: 12px; }
+  .card-body ul { font-size: 14px; color: var(--gray-700); padding-left: 20px; margin-bottom: 16px; }
+  .card-body li { margin-bottom: 6px; }
+
+  .btn {
+    display: inline-block; padding: 10px 24px; border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 14px;
+    transition: all 0.2s; margin-right: 8px; margin-bottom: 8px;
+  }
+  .btn-primary { background: var(--primary); color: var(--white); }
+  .btn-primary:hover { background: var(--primary-light); transform: scale(1.02); }
+  .btn-outline { background: var(--white); color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+  .color-1 { background: linear-gradient(135deg, #096dd9, #1890ff); }
+  .color-2 { background: linear-gradient(135deg, #389e0d, #52c41a); }
+  .color-3 { background: linear-gradient(135deg, #d48806, #faad14); }
+  .color-4 { background: linear-gradient(135deg, #722ed1, #9254de); }
+  .color-5 { background: linear-gradient(135deg, #c41d7f, #eb2f96); }
+  .color-6 { background: linear-gradient(135deg, #cf1322, #f5222d); }
+
+  .account-box {
+    background: linear-gradient(135deg, #f0faf5, #e8f5ee);
+    border: 2px solid var(--green); border-radius: 12px;
+    padding: 24px; margin: 24px 0; text-align: center;
+  }
+  .account-box h3 { color: var(--green); font-size: 18px; margin-bottom: 8px; }
+  .account-box .handle { font-size: 24px; font-weight: 900; color: var(--dark); }
+
+  .footer {
+    text-align: center; padding: 40px 24px;
+    font-size: 12px; color: var(--gray-500);
+    border-top: 1px solid var(--gray-300); margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 22px; }
+    .estimate-table { font-size: 12px; }
+    .estimate-table th, .estimate-table td { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>てっちゃんカフェ SNS構築・運用代行</h1>
+  <p>納品物一覧｜見積書全6項目の成果物</p>
+  <div class="meta">発注元: 合同会社レナトス 様｜制作: 株式会社斗｜見積書番号: 9</div>
+</div>
+
+<div class="container">
+
+<!-- ====== 見積書対応表 ====== -->
+<div class="summary-box">
+  <h2>見積書と成果物の対応</h2>
+  <p style="font-size:14px; color:var(--gray-700); margin-bottom:16px;">
+    見積書（件名: SNS構築・運用代行費）の全6項目について、各成果物を制作・納品しています。
+  </p>
+  <table class="estimate-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>見積項目</th>
+        <th>数量</th>
+        <th>金額</th>
+        <th>成果物</th>
+        <th>状態</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>投稿用テンプレート制作</td>
+        <td>5</td>
+        <td>¥50,000</td>
+        <td>テンプレート5本（開設宣言/工事進捗/こだわり/カウントダウン/オープン当日）</td>
+        <td><span class="check">5/5</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>投稿コンテンツ制作</td>
+        <td>10</td>
+        <td>¥150,000</td>
+        <td>投稿10本（キャプション・写真指定・ハッシュタグ・CTA・投稿スケジュール付き）</td>
+        <td><span class="check">10/10</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>運用代行・分析レポート</td>
+        <td>3</td>
+        <td>¥150,000</td>
+        <td>初月レポート / 中間レポート / 最終レポート（KPI計測フォーマット付き）</td>
+        <td><span class="check">3/3</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>SNSアカウント設計・構築（プロフィール）</td>
+        <td>1</td>
+        <td>¥50,000</td>
+        <td>プロフィール設計書 + @tetchan_cafe 開設済み</td>
+        <td><span class="check">済</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>SNSアカウント設計・構築（ターゲット設定）</td>
+        <td>1</td>
+        <td>¥50,000</td>
+        <td>ターゲット設定・ペルソナ・フォロワーシミュレーション</td>
+        <td><span class="check">済</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>SNSアカウント設計・構築（導線設計）</td>
+        <td>1</td>
+        <td>¥50,000</td>
+        <td>CTA・導線設計（来店導線/投稿別CTA/Googleマップ連携/DM予約/タイムライン）</td>
+        <td><span class="check">済</span></td>
+      </tr>
+      <tr class="total">
+        <td colspan="3" style="text-align:right; padding-right:24px;">合計（税込）</td>
+        <td>¥550,000</td>
+        <td colspan="2" style="text-align:center;">全項目 完了</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ====== 成果物一覧 ====== -->
+<div class="summary-box">
+  <h2>成果物の詳細</h2>
+</div>
+
+<!-- 成果物1: テンプレート+投稿 -->
+<div class="deliverable-card">
+  <div class="card-header color-1">
+    <div class="card-num">1</div>
+    <div>
+      <h3>投稿テンプレート5本 & 投稿コンテンツ10本</h3>
+      <div class="sub">見積項目 ①② に対応</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p><b>テンプレート5本:</b></p>
+    <ul>
+      <li><b>テンプレ①</b> 初投稿・アカウント開設宣言 ― フォロー促進のCTA付き</li>
+      <li><b>テンプレ②</b> 工事進捗・ビフォーアフター ― 保存促進のCTA付き</li>
+      <li><b>テンプレ③</b> こだわりポイント紹介 ― 共感→フォローのCTA付き</li>
+      <li><b>テンプレ④</b> カウントダウン ― カウントダウンスタンプ+Googleマップ連携</li>
+      <li><b>テンプレ⑤</b> オープン当日 ― 来店+タグ付け依頼の全力CTA</li>
+    </ul>
+    <p><b>投稿コンテンツ10本:</b> カフェ素材20枚から制作。各投稿に使用写真の指定・キャプション全文・ハッシュタグ5個・CTA・投稿タイミング（Week1〜4）を記載。フィード7本+リール3本の構成。</p>
+    <p><b>追加撮影依頼リスト:</b> 先方に追加で撮影してもらう素材10項目（優先度別）と依頼メッセージのテンプレートも含む。</p>
+    <a href="posts.html" class="btn btn-primary">成果物を見る</a>
+  </div>
+</div>
+
+<!-- 成果物2: 運用レポート -->
+<div class="deliverable-card">
+  <div class="card-header color-2">
+    <div class="card-num">2</div>
+    <div>
+      <h3>運用代行・分析レポート 3本セット</h3>
+      <div class="sub">見積項目 ③ に対応</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <ul>
+      <li><b>初月レポート</b>（アカウント開設〜オープン前日）― 実施内容サマリー / フォロワー獲得状況 / 投稿パフォーマンス表 / オープン準備チェックリスト</li>
+      <li><b>中間レポート</b>（オープン〜1ヶ月後）― KPIサマリー6指標 / 投稿パターン別分析 / フォロワー属性分析 / 来店導線の転換率 / 改善提案</li>
+      <li><b>最終レポート</b>（オープン〜3ヶ月後）― KPI達成率 / 3ヶ月推移 / パターン別効果ランキング / 成功事例 / セルフ運用ガイド / 次ステップ提案</li>
+    </ul>
+    <p>各レポートはKPI計測フォーマット付き。Instagramインサイトのデータを入力すればそのまま納品できる形式。</p>
+    <a href="reports.html" class="btn btn-primary">成果物を見る</a>
+  </div>
+</div>
+
+<!-- 成果物3: アカウント設計 -->
+<div class="deliverable-card">
+  <div class="card-header color-4">
+    <div class="card-num">3</div>
+    <div>
+      <h3>SNSアカウント設計・構築（プロフィール / ターゲット / 導線）</h3>
+      <div class="sub">見積項目 ④⑤⑥ に対応</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p><b>アカウント設計書（strategy.html）の内容:</b></p>
+    <ul>
+      <li><b>プロフィール設計</b> ― プロフィール文面テンプレート / アイコン・ユーザーネーム設計 / ハイライト5カテゴリ構成</li>
+      <li><b>ターゲット設定</b> ― ペルソナ定義 / フォロワー獲得シミュレーション（30日版）/ 居酒屋客の活用戦略</li>
+      <li><b>導線設計</b> ― 来店導線5ステップ / 投稿別CTA設計（6パターン×最適CTA） / ストーリーズCTA / Googleマップ連携 / DM予約導線 / フェーズ別タイムライン</li>
+      <li><b>30日ロードマップ</b> ― Week1〜4＋オープン当日の行動計画とKPI目標</li>
+      <li><b>2026年アルゴリズム対応</b> ― シェア重視の投稿設計 / ハッシュタグ新ルール / リール最適構成</li>
+    </ul>
+    <a href="strategy.html" class="btn btn-primary">アカウント設計書を見る</a>
+
+    <p style="margin-top:16px;"><b>投稿テンプレート6種（index.html）の内容:</b></p>
+    <ul>
+      <li>参考アカウント一覧（個人経営カフェ・チェーン店）</li>
+      <li>6つの投稿パターン ― 今日のおすすめ型 / リール動画型 / 人・裏側型 / 口コミ型 / 限定型 / 世界観型</li>
+      <li>各パターンのキャプションテンプレート・撮影のコツ・投稿スケジュール</li>
+      <li>CTA・導線設計（Part 3）</li>
+    </ul>
+    <a href="index.html" class="btn btn-primary">投稿テンプレート6種を見る</a>
+  </div>
+</div>
+
+<!-- Instagramアカウント -->
+<div class="account-box">
+  <h3>Instagramアカウント（開設済み）</h3>
+  <div class="handle">@tetchan_cafe</div>
+  <p style="font-size:14px; color:var(--gray-700); margin-top:12px;">
+    ビジネスアカウント設定済み / プロフィール設定済み / カフェ用ロゴ設定済み
+  </p>
+  <a href="https://www.instagram.com/tetchan_cafe/" class="btn btn-outline" style="margin-top:12px;" target="_blank">Instagramを見る</a>
+</div>
+
+</div>
+
+<footer class="footer">
+  てっちゃんカフェ SNS構築・運用代行 納品物一覧 &copy; 2026｜株式会社斗
+</footer>
+
+</body>
+</html>
