@@ -47,6 +47,9 @@
   .estimate-table .total { background: var(--primary); color: var(--white); font-weight: 900; }
 
   .check { color: var(--green); font-weight: 900; font-size: 18px; }
+  .partial { color: var(--gold); font-weight: 900; font-size: 16px; }
+  .pending { color: var(--gray-500); font-weight: 900; font-size: 16px; }
+  .status-note { font-size: 12px; color: var(--gray-500); margin-top: 2px; display: block; }
 
   .deliverable-card {
     background: var(--white); border-radius: 16px; overflow: hidden;
@@ -150,16 +153,16 @@
         <td>投稿コンテンツ制作</td>
         <td>10</td>
         <td>¥150,000</td>
-        <td>投稿10本（キャプション・写真指定・ハッシュタグ・CTA・投稿スケジュール付き）</td>
-        <td><span class="check">10/10</span></td>
+        <td>投稿10本（キャプション・写真指定・ハッシュタグ・CTA・投稿スケジュール付き）<span class="status-note">※原稿は10/10完成、実投稿は順次運用中</span></td>
+        <td><span class="check">10/10</span><span class="status-note">実投稿 7/10</span></td>
       </tr>
       <tr>
         <td>3</td>
         <td>運用代行・分析レポート</td>
         <td>3</td>
         <td>¥150,000</td>
-        <td>初月レポート / 中間レポート / 最終レポート（KPI計測フォーマット付き）</td>
-        <td><span class="check">3/3</span></td>
+        <td>初月レポート / 中間レポート / 最終レポート（KPI計測フォーマット付き）<span class="status-note">※フォーマット整備済み、データ反映は運用後</span></td>
+        <td><span class="pending">準備中</span><span class="status-note">0/3</span></td>
       </tr>
       <tr>
         <td>4</td>
@@ -188,7 +191,7 @@
       <tr class="total">
         <td colspan="3" style="text-align:right; padding-right:24px;">合計（税込）</td>
         <td>¥550,000</td>
-        <td colspan="2" style="text-align:center;">全項目 完了</td>
+        <td colspan="2" style="text-align:center;">制作物 完納／運用継続中</td>
       </tr>
     </tbody>
   </table>
@@ -217,7 +220,7 @@
       <li><b>テンプレ④</b> カウントダウン ― カウントダウンスタンプ+Googleマップ連携</li>
       <li><b>テンプレ⑤</b> オープン当日 ― 来店+タグ付け依頼の全力CTA</li>
     </ul>
-    <p><b>投稿コンテンツ10本:</b> カフェ素材20枚から制作。各投稿に使用写真の指定・キャプション全文・ハッシュタグ5個・CTA・投稿タイミング（Week1〜4）を記載。フィード7本+リール3本の構成。</p>
+    <p><b>投稿コンテンツ10本:</b> カフェ素材20枚から制作。各投稿に使用写真の指定・キャプション全文・ハッシュタグ5個・CTA・投稿タイミング（Week1〜4）を記載。フィード7本+リール3本の構成。<br><span style="color:var(--gold); font-weight:700;">運用状況: 実投稿 7/10（残3本はオープン直前期に順次投稿予定）</span></p>
     <p><b>追加撮影依頼リスト:</b> 先方に追加で撮影してもらう素材10項目（優先度別）と依頼メッセージのテンプレートも含む。</p>
     <a href="posts.html" class="btn btn-primary">成果物を見る</a>
   </div>
@@ -239,7 +242,8 @@
       <li><b>最終レポート</b>（オープン〜3ヶ月後）― KPI達成率 / 3ヶ月推移 / パターン別効果ランキング / 成功事例 / セルフ運用ガイド / 次ステップ提案</li>
     </ul>
     <p>各レポートはKPI計測フォーマット付き。Instagramインサイトのデータを入力すればそのまま納品できる形式。</p>
-    <a href="reports.html" class="btn btn-primary">成果物を見る</a>
+    <p style="color:var(--gold); font-weight:700;">運用状況: フォーマット整備済み・データ反映待ち（初月レポートはオープン後に作成予定）</p>
+    <a href="reports.html" class="btn btn-primary">フォーマットを見る</a>
   </div>
 </div>
 
